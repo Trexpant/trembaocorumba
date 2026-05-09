@@ -3,435 +3,482 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trem Bão - Doceria Artesanal | Corumbá-MS</title>
+    <title>Trem Bão - Doceria Premium | Corumbá-MS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* Reset & Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --bg-dark: #0f0808;
+            --bg-gradient: linear-gradient(135deg, #1a0f0f 0%, #2c1810 50%, #1a0f0f 100%);
+            --gold: #d4af37;
+            --gold-light: #f1c40f;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-blur: 16px;
+            --text-main: #ffffff;
+            --text-muted: #b89f9f;
+            --chocolate-accent: #5d4037;
         }
 
-        :root {
-            --chocolate-dark: #3E2723;
-            --chocolate-medium: #5D4037;
-            --chocolate-light: #8D6E63;
-            --cream: #FFF8E1;
-            --gold: #FFD54F;
-            --white: #FFFFFF;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: var(--cream);
-            color: var(--chocolate-dark);
+            background: var(--bg-dark);
+            color: var(--text-main);
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
         h1, h2, h3 {
             font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #fff, var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle {
+            display: block;
+            color: var(--gold);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Glassmorphism Utility */
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--glass-blur));
+            -webkit-backdrop-filter: blur(var(--glass-blur));
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
         }
 
         /* Header */
         header {
-            background: linear-gradient(135deg, var(--chocolate-dark) 0%, var(--chocolate-medium) 100%);
-            padding: 0.5rem 0;
             position: fixed;
-            width: 100%;
-            top: 0;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+            border-radius: 50px;
+            padding: 0.8rem 2rem;
+            transition: all 0.3s ease;
         }
 
         nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo img {
-            height: 70px;
-            width: auto;
-            object-fit: contain;
-        }
+        .logo img { height: 45px; }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
         }
 
         .nav-links a {
-            color: var(--white);
+            color: rgba(255,255,255,0.7);
             text-decoration: none;
+            font-size: 0.9rem;
             font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: color 0.3s;
+            position: relative;
         }
 
-        .nav-links a:hover {
-            color: var(--gold);
+        .nav-links a:hover { color: var(--gold); }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 1px;
+            background: var(--gold); transition: width 0.3s;
         }
+        .nav-links a:hover::after { width: 100%; }
 
-        .mobile-menu {
-            display: none;
-            color: var(--white);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
+        .mobile-menu { display: none; color: white; font-size: 1.5rem; cursor: pointer; }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
-            margin-top: 90px;
-            min-height: 90vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            background: var(--bg-gradient);
+            padding: 120px 2rem 2rem;
             position: relative;
             overflow: hidden;
-            padding: 2rem;
+        }
+
+        /* Background Elements for Depth */
+        .hero::before {
+            content: ''; position: absolute; top: -10%; left: -10%; width: 50vw; height: 50vw;
+            background: radial-gradient(circle, rgba(212,175,55,0.08) 0%, transparent 70%);
+            filter: blur(60px);
+        }
+        .hero::after {
+            content: ''; position: absolute; bottom: -10%; right: -10%; width: 40vw; height: 40vw;
+            background: radial-gradient(circle, rgba(93,64,55,0.15) 0%, transparent 70%);
+            filter: blur(60px);
         }
 
         .hero-container {
-            max-width: 1200px;
+            max-width: 1300px;
+            width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 5rem;
             align-items: center;
-            position: relative;
-            z-index: 1;
-            width: 100%;
+            z-index: 2;
         }
 
-        .hero-content h1 {
-            font-size: 3.5rem;
-            color: var(--white);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        .hero-content {
+            padding-right: 2rem;
         }
 
-        .hero-content h1 span {
+        .hero-title {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .hero-title span {
             color: var(--gold);
-            display: block;
+            font-style: italic;
         }
 
-        .hero-content p {
-            font-size: 1.2rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 2rem;
-            line-height: 1.6;
+        .hero-desc {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 90%;
         }
 
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
+        .hero-buttons { display: flex; gap: 1rem; }
 
         .btn {
-            padding: 1rem 2rem;
+            padding: 1rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            gap: 0.8rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            overflow: hidden;
+            position: relative;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            color: var(--white);
+            background: linear-gradient(135deg, var(--gold), #aa8a26);
+            color: #1a0f0f;
+            border: none;
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(212,175,55,0.4);
         }
 
         .btn-secondary {
-            background: linear-gradient(135deg, #E4405F 0%, #C13584 100%);
-            color: var(--white);
+            background: rgba(255,255,255,0.05);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
         }
 
         .btn-secondary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(228,64,95,0.4);
+            background: rgba(255,255,255,0.1);
+            border-color: var(--gold);
+            color: var(--gold);
         }
 
-        /* Video container */
-        .video-container {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        /* Video Container */
+        .video-wrapper {
             position: relative;
+            border-radius: 30px;
+            padding: 10px;
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+            transition: transform 0.5s ease;
+        }
+
+        .video-wrapper:hover {
+            transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+        }
+
+        .video-wrapper::before {
+            content: ''; position: absolute; inset: -2px;
+            background: linear-gradient(45deg, var(--gold), transparent, var(--gold));
+            z-index: -1; border-radius: 32px; opacity: 0.3;
+            filter: blur(10px);
         }
 
         .brigadeiro-video {
             width: 100%;
-            max-width: 450px;
+            display: block;
             border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-            object-fit: cover;
         }
 
-        /* About Section */
-        .about {
-            padding: 5rem 2rem;
-            background: var(--white);
-        }
+        /* Sections Common */
+        section { padding: 8rem 2rem; position: relative; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 5rem; }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: var(--chocolate-dark);
-            margin-bottom: 3rem;
-        }
-
+        /* About */
+        .about { background: #140a0a; }
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 5rem;
             align-items: center;
         }
 
         .about-text p {
             font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--chocolate-medium);
-            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
         }
 
-        .about-features {
+        .feature-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
-            margin-top: 2rem;
         }
 
-        .feature {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+        .feature-card {
+            padding: 1.5rem;
+            border-radius: 15px;
+            transition: transform 0.3s, border-color 0.3s;
         }
 
-        .feature i {
-            font-size: 2rem;
-            color: var(--gold);
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
         }
 
-        .feature span {
-            font-weight: 600;
-            color: var(--chocolate-dark);
-        }
+        .feature-card i { font-size: 1.5rem; color: var(--gold); margin-bottom: 0.5rem; }
+        .feature-card h4 { font-size: 1.1rem; margin-bottom: 0.3rem; color: white; }
+        .feature-card p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
 
-        .about-image {
+        .about-image-frame {
+            position: relative;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+        .about-image-frame img { width: 100%; height: auto; display: block; transition: transform 0.5s; }
+        .about-image-frame:hover img { transform: scale(1.05); }
 
-        /* Gallery Section */
-        .gallery {
-            padding: 5rem 2rem;
-            background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
-        }
-
+        /* Gallery */
+        .gallery { background: var(--bg-gradient); }
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
         }
 
         .gallery-item {
             position: relative;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            transition: transform 0.3s;
-            background: var(--white);
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-10px);
+            aspect-ratio: 4/5;
+            cursor: pointer;
+            group: gallery;
         }
 
         .gallery-item img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.6s ease;
         }
+
+        .gallery-item:hover img { transform: scale(1.1); }
 
         .gallery-overlay {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(62,39,35,0.95), transparent);
-            padding: 2rem 1.5rem 1.5rem;
-            color: var(--white);
+            bottom: 0; left: 0; right: 0;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.4s ease;
         }
 
-        .gallery-overlay h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
+        .gallery-item:hover .gallery-overlay { transform: translateY(0); opacity: 1; }
 
-        /* Contact Section */
+        .gallery-overlay h3 { font-size: 1.5rem; color: white; margin-bottom: 0.3rem; }
+        .gallery-overlay p { color: var(--gold); font-size: 0.9rem; }
+
+        /* Contact */
         .contact {
-            padding: 5rem 2rem;
-            background: var(--chocolate-dark);
-            color: var(--white);
+            background: #0a0505;
+            text-align: center;
         }
 
-        .contact .section-title {
-            color: var(--white);
-        }
-
-        .contact-content {
+        .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
             max-width: 1000px;
             margin: 0 auto;
         }
 
         .contact-card {
-            text-align: center;
-            padding: 2rem;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
             background: rgba(255,255,255,0.05);
-            border-radius: 15px;
+        }
+
+        .contact-icon {
+            width: 60px; height: 60px;
+            background: rgba(212,175,55,0.1);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+
+        .contact-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: white; }
+        .contact-card p { color: var(--text-muted); font-size: 0.95rem; }
+        .contact-card a { color: var(--gold); text-decoration: none; font-weight: 600; }
+
+        /* Footer */
+        footer {
+            background: #050202;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .social-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; }
+        .social-links a {
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 1.2rem;
+            transition: all 0.3s;
             border: 1px solid rgba(255,255,255,0.1);
         }
-
-        .contact-card i {
-            font-size: 3rem;
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-
-        .contact-card h3 {
-            color: var(--gold);
-            margin-bottom: 0.5rem;
-        }
-
-        .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: #25D366;
-            color: white !important;
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            margin-top: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        footer {
-            background: var(--chocolate-medium);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.8rem;
-            transition: color 0.3s;
-        }
-
         .social-links a:hover {
-            color: var(--gold);
+            background: var(--gold); color: #000; transform: translateY(-5px);
         }
 
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .mobile-menu { display: block; }
-            .hero-container { grid-template-columns: 1fr; text-align: center; }
-            .hero-content h1 { font-size: 2.5rem; }
-            .video-container { order: -1; }
-            .about-content { grid-template-columns: 1fr; }
-        }
+        footer p { color: var(--text-muted); font-size: 0.9rem; }
 
-        .fade-in {
+        /* Animations */
+        .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s, transform 0.6s;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        /* Text Reveal Animation */
+        .text-reveal {
+            overflow: hidden;
+            display: inline-block;
+        }
+        
+        .text-reveal span {
+            display: inline-block;
+            transform: translateY(100%);
+            transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        
+        .active .text-reveal span { transform: translateY(0); }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+
+        @media (max-width: 900px) {
+            .hero-container { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
+            .hero-title { font-size: 3rem; }
+            .hero-content { padding: 0; }
+            .hero-buttons { justify-content: center; }
+            .video-wrapper { transform: none; max-width: 400px; margin: 0 auto; }
+            .about-content { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; position: absolute; top: 70px; left: 0; right: 0; background: rgba(15,8,8,0.95); flex-direction: column; padding: 2rem; border-radius: 20px; }
+            .nav-links.active { display: flex; }
+            .mobile-menu { display: block; }
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <header class="glass">
         <nav>
             <a href="#" class="logo">
-                <img src="logo-trem-bao.png" alt="Trem Bão - Doceria & Delícias" id="logo-img">
+                <img src="logo-trem-bao.png" alt="Trem Bão Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'color:var(--gold);font-family:Playfair Display,serif;font-size:1.5rem;font-weight:700\'>Trem Bão</span>'">
             </a>
+            <div class="mobile-menu"><i class="fas fa-bars"></i></div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
+                <li><a href="#home">Início</a></li>
                 <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#galeria">Menu</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
         </nav>
     </header>
 
     <section class="hero" id="home">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Doceria <span>Trem Bão</span></h1>
-                <p>Delícias artesanais feitas com amor em Corumbá-MS. Bolos personalizados, doces finos e aquele brigadeiro que derrete na boca!</p>
-                <div class="hero-buttons">
-                    <a href="https://wa.me/5567984060550" target="_blank" class="btn btn-primary">
-                        <i class="fab fa-whatsapp"></i> Fazer Pedido
+                <h1 class="hero-title">
+                    <div class="text-reveal"><span style="transition-delay:0.1s">Delícias que</span></div><br>
+                    <div class="text-reveal"><span style="transition-delay:0.2s">encantam a <span style="color:var(--gold)">alma</span></span></div>
+                </h1>
+                <p class="hero-desc reveal delay-2">Doceria artesanal premium em Corumbá-MS. Bolos personalizados e doces finos para momentos inesquecíveis.</p>
+                <div class="hero-buttons reveal delay-3">
+                    <a href="https://wa.me/5567984060550" class="btn btn-primary">
+                        <i class="fab fa-whatsapp"></i> Encomendar
                     </a>
-                    <a href="https://instagram.com/trembao" target="_blank" class="btn btn-secondary">
-                        <i class="fab fa-instagram"></i> Ver Instagram
+                    <a href="https://instagram.com/trembao" class="btn btn-secondary">
+                        <i class="fab fa-instagram"></i> Instagram
                     </a>
                 </div>
             </div>
-            <div class="video-container">
+            
+            <div class="video-wrapper reveal delay-2">
                 <video class="brigadeiro-video" autoplay loop muted playsinline>
                     <source src="brigadeiro-girando.mp4" type="video/mp4">
-                    Seu navegador não suporta vídeos.
                 </video>
             </div>
         </div>
@@ -439,19 +486,39 @@
 
     <section class="about" id="sobre">
         <div class="container">
-            <h2 class="section-title fade-in">Nossa História</h2>
+            <div class="section-header reveal">
+                <span class="section-subtitle">Nossa Essência</span>
+                <h2>Artesanato com <span style="color:var(--gold)">Alma</span></h2>
+            </div>
             <div class="about-content">
-                <div class="about-text fade-in">
-                    <p>A <strong>Doceria Trem Bão</strong> nasceu da paixão por transformar momentos especiais em memórias doces. Localizados na Rua Cáceres 946, em Corumbá-MS.</p>
-                    <div class="about-features">
-                        <div class="feature"><i class="fas fa-heart"></i><span>Feito com Amor</span></div>
-                        <div class="feature"><i class="fas fa-award"></i><span>Ingredientes Premium</span></div>
-                        <div class="feature"><i class="fas fa-truck"></i><span>Entrega em Corumbá</span></div>
-                        <div class="feature"><i class="fas fa-magic"></i><span>Personalização</span></div>
+                <div class="about-text reveal delay-1">
+                    <p>Nascida na Rua Cáceres 946, a <strong style="color:var(--gold)">Doceria Trem Bão</strong> é o resultado da paixão por transformar ingredientes selecionados em memórias doces. Cada receita é um equilíbrio perfeito entre tradição e inovação.</p>
+                    <p>Não vendemos apenas doces; entregamos a felicidade de compartilhar momentos especiais com quem amamos.</p>
+                    <div class="feature-grid">
+                        <div class="feature-card glass">
+                            <i class="fas fa-gem"></i>
+                            <h4>Premium</h4>
+                            <p>Ingredientes de alta qualidade.</p>
+                        </div>
+                        <div class="feature-card glass">
+                            <i class="fas fa-hand-holding-heart"></i>
+                            <h4>Artesanal</h4>
+                            <p>Feito à mão com carinho.</p>
+                        </div>
+                        <div class="feature-card glass">
+                            <i class="fas fa-paint-brush"></i>
+                            <h4>Personalizado</h4>
+                            <p>Do seu jeitinho.</p>
+                        </div>
+                        <div class="feature-card glass">
+                            <i class="fas fa-truck-fast"></i>
+                            <h4>Entrega</h4>
+                            <p>Em Corumbá e região.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="about-image fade-in">
-                    <img src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?w=600" alt="Doces artesanais">
+                <div class="about-image-frame glass reveal delay-2">
+                    <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476d?w=800&q=80" alt="Preparando doces premium">
                 </div>
             </div>
         </div>
@@ -459,27 +526,30 @@
 
     <section class="gallery" id="galeria">
         <div class="container">
-            <h2 class="section-title fade-in">Nossas Delícias</h2>
+            <div class="section-header reveal">
+                <span class="section-subtitle">Nossas Criações</span>
+                <h2>Menu de <span style="color:var(--gold)">Sabores</span></h2>
+            </div>
             <div class="gallery-grid">
-                <div class="gallery-item fade-in">
-                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600" alt="Bolo de Chocolate">
+                <div class="gallery-item reveal delay-1">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80" alt="Bolo de Chocolate">
                     <div class="gallery-overlay">
-                        <h3>Bolo de Chocolate</h3>
-                        <p>Camadas generosas com recheio cremoso</p>
+                        <h3>Chocolate Noir</h3>
+                        <p>Camadas de ganache belga</p>
                     </div>
                 </div>
-                <div class="gallery-item fade-in">
-                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600" alt="Bolo de Morango">
+                <div class="gallery-item reveal delay-2">
+                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80" alt="Bolo de Morango">
                     <div class="gallery-overlay">
-                        <h3>Bolo de Morango</h3>
-                        <p>Fresco e delicioso</p>
+                        <h3>Red Velvet</h3>
+                        <p>Clássico com toque de avelã</p>
                     </div>
                 </div>
-                <div class="gallery-item fade-in">
-                    <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600" alt="Brigadeiros">
+                <div class="gallery-item reveal delay-3">
+                    <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=80" alt="Brigadeiros">
                     <div class="gallery-overlay">
-                        <h3>Brigadeiros Gourmet</h3>
-                        <p>O tradicional brasileiro</p>
+                        <h3>Brigadeiros Gold</h3>
+                        <p>Edição limitada</p>
                     </div>
                 </div>
             </div>
@@ -488,20 +558,23 @@
 
     <section class="contact" id="contato">
         <div class="container">
-            <h2 class="section-title fade-in">Entre em Contato</h2>
-            <div class="contact-content">
-                <div class="contact-card fade-in">
-                    <i class="fab fa-whatsapp"></i>
+            <div class="section-header reveal">
+                <span class="section-subtitle">Fale Conosco</span>
+                <h2>Faça seu <span style="color:var(--gold)">Pedido</span></h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card glass reveal delay-1">
+                    <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
                     <h3>WhatsApp</h3>
-                    <a href="https://wa.me/5567984060550" class="whatsapp-btn">(67) 98406-0550</a>
+                    <p><a href="https://wa.me/5567984060550">(67) 98406-0550</a></p>
                 </div>
-                <div class="contact-card fade-in">
-                    <i class="fab fa-instagram"></i>
+                <div class="contact-card glass reveal delay-2">
+                    <div class="contact-icon"><i class="fab fa-instagram"></i></div>
                     <h3>Instagram</h3>
-                    <p>@trembao</p>
+                    <p><a href="https://instagram.com/trembao">@trembao</a></p>
                 </div>
-                <div class="contact-card fade-in">
-                    <i class="fas fa-map-marker-alt"></i>
+                <div class="contact-card glass reveal delay-3">
+                    <div class="contact-icon"><i class="fas fa-map-pin"></i></div>
                     <h3>Endereço</h3>
                     <p>Rua Cáceres, 946<br>Corumbá - MS</p>
                 </div>
@@ -518,19 +591,29 @@
     </footer>
 
     <script>
-        // Scroll animations
+        // Scroll Animation Observer
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Smooth scroll
+        // Mobile Menu
+        const menuBtn = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
+                navLinks.classList.remove('active');
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) target.scrollIntoView({ behavior: 'smooth' });
             });
