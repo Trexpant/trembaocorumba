@@ -1,2541 +1,634 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Protege Piso Boa Vista | Proteção Profissional de Pisos em Obras e Reformas – Roraima</title>
-  <meta name="description" content="Protege Piso Boa Vista: locação de proteção profissional para pisos durante obras e reformas em Boa Vista e municípios de Roraima. Entrega, instalação, manutenção e retirada incluídos. Orçamento gratuito!" />
-  <meta name="keywords" content="proteção de piso Boa Vista, protetor de piso para obra Boa Vista, locação proteção piso Boa Vista RR, proteger piso durante reforma Boa Vista, aluguel placa proteção piso Roraima" />
-  <meta name="author" content="Protege Piso Boa Vista" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://boavista.protegepiso.com.br/" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Protege Piso Boa Vista | Proteção Profissional para Obras e Reformas" />
-  <meta property="og:description" content="Sistema inovador de locação de placas de proteção para pisos em obras e reformas em Boa Vista e Roraima. Serviço completo: instalação, manutenção e retirada incluídos." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://boavista.protegepiso.com.br/" />
-  <meta property="og:locale" content="pt_BR" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Protege Piso Boa Vista" />
-  <meta name="twitter:description" content="Proteção profissional de pisos para obras e reformas em Boa Vista RR" />
-
-  <!-- Schema.org: LocalBusiness -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Protege Piso Boa Vista",
-    "description": "Locação de sistema profissional de proteção de pisos para obras e reformas em Boa Vista e municípios de Roraima.",
-    "url": "https://boavista.protegepiso.com.br/",
-    "telephone": "+55-95-99133-3368",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Rua da Mangueira, 237",
-      "addressLocality": "Boa Vista",
-      "addressRegion": "RR",
-      "postalCode": "69307-570",
-      "addressCountry": "BR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 2.8235,
-      "longitude": -60.6758
-    },
-    "openingHours": "Mo-Fr 08:00-18:00, Sa 08:00-12:00",
-    "priceRange": "$$",
-    "areaServed": "Boa Vista e municípios até 200km, Roraima",
-    "hasMap": "https://maps.google.com/?q=Rua+da+Mangueira+237+Boa+Vista+RR",
-    "sameAs": ["https://www.instagram.com/protegepisoboavista"]
-  }
-  </script>
-
-  <!-- Schema.org: FAQPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Como funciona o sistema Protege Piso?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A Protege Piso oferece um sistema completo de locação: nossa equipe entrega as placas na obra, realiza a instalação, faz manutenção durante o período e retira tudo ao final. O cliente paga apenas pelos m² necessários e pelo período de uso."
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#1a0f0d">
+    <meta name="description" content="Doceria Trem Bão - Bolos personalizados e doces finos em Corumbá-MS">
+    <title>Trem Bão | Doceria Premium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-primary: #0f0806;
+            --bg-gradient: linear-gradient(135deg, #1a0f0d 0%, #2a1b18 50%, #1f120f 100%);
+            --accent-gold: #d4a574;
+            --accent-rose: #e8b4b8;
+            --accent-warm: #c98c6c;
+            --glass-bg: rgba(255, 255, 255, 0.04);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --text-primary: #f5f0eb;
+            --text-secondary: #b8a89d;
+            --text-muted: #8a7a70;
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 28px;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --touch-min: 48px;
         }
-      },
-      {
-        "@type": "Question",
-        "name": "Quais tipos de piso a Protege Piso protege?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Protegemos porcelanato, cerâmica, piso de madeira, mármore, granito, pisos externos, escadas, rampas e áreas de carga e descarga. O sistema funciona em qualquer tipo de superfície."
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
         }
-      },
-      {
-        "@type": "Question",
-        "name": "A Protege Piso atende onde em Roraima?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Atendemos Boa Vista e todos os municípios em um raio de até 200km, cobrindo grande parte do estado de Roraima."
+
+        body.intro-active { overflow: hidden; }
+
+        /* ===== ANIMATED BACKGROUND ===== */
+        .bg-orbs {
+            position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none;
+            opacity: 0; transition: opacity 1s ease 0.5s;
         }
-      },
-      {
-        "@type": "Question",
-        "name": "Quanto custa a proteção de piso?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "O valor é calculado por m² e pelo período de locação. Solicite um orçamento gratuito pelo WhatsApp e receba uma proposta personalizada para sua obra ou reforma."
+        body.intro-active .bg-orbs { opacity: 0; }
+
+        .orb {
+            position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.4;
+            animation: floatOrb 20s ease-in-out infinite;
         }
-      },
-      {
-        "@type": "Question",
-        "name": "As placas danificam o piso?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Não. As placas são fixadas pelo próprio peso e geometria intertravada, sem uso de adesivos. Elas protegem sem deixar marcas ou danificar qualquer tipo de piso."
+        .orb-1 { width: 60vmax; height: 60vmax; background: radial-gradient(circle, var(--accent-rose), transparent 70%); top: -20%; left: -20%; animation-delay: 0s; }
+        .orb-2 { width: 50vmax; height: 50vmax; background: radial-gradient(circle, var(--accent-warm), transparent 70%); bottom: -15%; right: -15%; animation-delay: -5s; }
+        .orb-3 { width: 40vmax; height: 40vmax; background: radial-gradient(circle, var(--accent-gold), transparent 70%); top: 40%; left: 30%; animation-delay: -10s; opacity: 0.25; }
+
+        @keyframes floatOrb {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -40px) scale(1.05); }
+            66% { transform: translate(-20px, 25px) scale(0.95); }
         }
-      },
-      {
-        "@type": "Question",
-        "name": "Qual é a resistência das placas de proteção?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "As placas suportam grandes impactos, fluxo intenso de pessoas, andaimes, carriolas e até trânsito de empilhadeiras. Têm excelente vedação para líquidos e sólidos como tinta, cimento e argamassa."
+
+        /* ===== SCROLL PROGRESS ===== */
+        .scroll-progress {
+            position: fixed; top: 0; left: 0; height: 3px;
+            background: linear-gradient(90deg, var(--accent-rose), var(--accent-gold), var(--accent-warm));
+            z-index: 10000; width: 0%; transition: width 0.1s linear;
         }
-      }
-    ]
-  }
-  </script>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
-
-  <style>
-    :root {
-      --green: #2ab84a;
-      --green-dark: #1e9038;
-      --green-deeper: #166b2b;
-      --green-light: #e8f8ed;
-      --white: #ffffff;
-      --off-white: #f5f5f3;
-      --gray-light: #e8e8e6;
-      --gray-mid: #9a9a96;
-      --gray-dark: #3a3a38;
-      --black: #1a1a18;
-      --shadow: 0 4px 24px rgba(0,0,0,0.10);
-      --shadow-lg: 0 12px 48px rgba(0,0,0,0.15);
-      --radius: 4px;
-      --radius-lg: 10px;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-
-    body {
-      font-family: 'Barlow', sans-serif;
-      font-size: 16px;
-      color: var(--gray-dark);
-      background: var(--white);
-      overflow-x: hidden;
-      max-width: 100vw;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 800;
-      text-transform: uppercase;
-      line-height: 1.1;
-      letter-spacing: 0.01em;
-    }
-
-    /* ─── HEADER ─── */
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      background: var(--white);
-      border-bottom: 3px solid var(--green);
-      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-      transition: box-shadow 0.3s;
-    }
-
-    .header-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-      height: 68px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-
-    .logo-badge {
-      background: var(--green);
-      color: white;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 900;
-      font-size: 13px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: var(--radius);
-      line-height: 1.3;
-      text-align: center;
-    }
-
-    .logo-badge span {
-      display: block;
-      font-size: 18px;
-      font-weight: 900;
-      letter-spacing: 0.02em;
-    }
-
-    .logo-city {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gray-dark);
-      line-height: 1.2;
-    }
-
-    .logo-city em {
-      display: block;
-      font-style: normal;
-      color: var(--green);
-      font-size: 11px;
-      letter-spacing: 0.2em;
-    }
-
-    nav { display: flex; align-items: center; gap: 28px; }
-
-    nav a {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--gray-dark);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    nav a:hover { color: var(--green); }
-
-    .btn-wpp-header {
-      background: var(--green);
-      color: white;
-      padding: 8px 18px;
-      border-radius: var(--radius);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 800;
-      font-size: 13px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: background 0.2s, transform 0.15s;
-    }
-
-    .btn-wpp-header:hover { background: var(--green-dark); transform: translateY(-1px); }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--gray-dark);
-      transition: all 0.3s;
-    }
-
-    /* ─── HERO ─── */
-    .hero {
-      margin-top: 68px;
-      min-height: 92vh;
-      background: var(--green-deeper);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      max-width: 100%;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><rect width="60" height="60" fill="none"/><path d="M0 30 L30 0 L60 30 L30 60 Z" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/></svg>') repeat;
-      pointer-events: none;
-    }
-
-    .hero-img {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-img-placeholder {
-      width: 100%;
-      height: 100%;
-      min-height: 92vh;
-      background: linear-gradient(135deg, #1a4a28 0%, #0d2e17 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 16px;
-      color: rgba(255,255,255,0.2);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 14px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    /* Substitua o .hero-img-placeholder por uma tag <img> real */
-    .hero-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .hero-img::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, transparent 60%, var(--green-deeper) 100%);
-    }
-
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 64px 56px 64px 40px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: rgba(255,255,255,0.85);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      padding: 6px 14px;
-      border-radius: 2px;
-      margin-bottom: 24px;
-      width: fit-content;
-      animation: fadeDown 0.6s ease both;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.6rem, 4.5vw, 4rem);
-      color: var(--white);
-      margin-bottom: 20px;
-      animation: fadeDown 0.6s 0.1s ease both;
-    }
-
-    .hero h1 em {
-      font-style: normal;
-      color: var(--green);
-    }
-
-    .hero-sub {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.80);
-      line-height: 1.65;
-      margin-bottom: 36px;
-      max-width: 480px;
-      animation: fadeDown 0.6s 0.2s ease both;
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      animation: fadeDown 0.6s 0.3s ease both;
-    }
-
-    .btn-primary {
-      background: var(--green);
-      color: white;
-      padding: 16px 28px;
-      border-radius: var(--radius);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 800;
-      font-size: 16px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      box-shadow: 0 4px 20px rgba(42,184,74,0.35);
-    }
-
-    .btn-primary:hover {
-      background: var(--green-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 28px rgba(42,184,74,0.45);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: white;
-      padding: 15px 28px;
-      border-radius: var(--radius);
-      border: 2px solid rgba(255,255,255,0.4);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      font-size: 16px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: border-color 0.2s, background 0.2s;
-    }
-
-    .btn-secondary:hover {
-      border-color: white;
-      background: rgba(255,255,255,0.08);
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 40px;
-      margin-top: 48px;
-      padding-top: 36px;
-      border-top: 1px solid rgba(255,255,255,0.15);
-      animation: fadeDown 0.6s 0.4s ease both;
-    }
-
-    .hero-stat-num {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 2.4rem;
-      font-weight: 900;
-      color: var(--green);
-      line-height: 1;
-    }
-
-    .hero-stat-label {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.6);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-top: 4px;
-    }
-
-    /* ─── SECTION SHARED ─── */
-    section { padding: 88px 24px; }
-
-    .container { max-width: 1200px; margin: 0 auto; }
-
-    .section-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--green);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    .section-tag::before {
-      content: '';
-      display: block;
-      width: 28px;
-      height: 2px;
-      background: var(--green);
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      color: var(--black);
-      margin-bottom: 18px;
-    }
-
-    .section-title em {
-      font-style: normal;
-      color: var(--green);
-    }
-
-    .section-lead {
-      font-size: 1.05rem;
-      color: var(--gray-mid);
-      line-height: 1.7;
-      max-width: 640px;
-    }
-
-    /* ─── SOBRE ─── */
-    #sobre { background: var(--off-white); overflow: hidden; }
-
-    .sobre-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
-      align-items: center;
-    }
-
-    .sobre-img-wrap {
-      position: relative;
-      width: 100%;
-      max-width: 100%;
-      overflow: hidden;
-    }
-
-    .sobre-img-placeholder {
-      width: 100%;
-      max-width: 100%;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      display: block;
-    }
-
-    .sobre-img-placeholder img {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      display: block;
-      border-radius: var(--radius-lg);
-      object-fit: contain;
-    }
-
-    .sobre-badge {
-      position: absolute;
-      bottom: -20px;
-      right: -20px;
-      background: var(--green);
-      color: white;
-      border-radius: var(--radius-lg);
-      padding: 20px 24px;
-      text-align: center;
-      box-shadow: var(--shadow-lg);
-      z-index: 2;
-    }
-
-    .sobre-badge-num {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 2.8rem;
-      font-weight: 900;
-      line-height: 1;
-    }
-
-    .sobre-badge-label {
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      opacity: 0.9;
-      margin-top: 4px;
-    }
-
-    .sobre-content .section-lead { margin-bottom: 28px; }
-
-    .sobre-checks {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .sobre-checks li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: var(--gray-dark);
-    }
-
-    .check-icon {
-      width: 22px;
-      height: 22px;
-      background: var(--green);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    .check-icon svg { width: 12px; height: 12px; fill: white; }
-
-    /* ─── COMO FUNCIONA ─── */
-    #como-funciona { background: var(--white); }
-
-    .steps-header { text-align: center; margin-bottom: 64px; }
-    .steps-header .section-tag { justify-content: center; }
-    .steps-header .section-lead { margin: 0 auto; text-align: center; }
-
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      position: relative;
-    }
-
-    .steps-grid::before {
-      content: '';
-      position: absolute;
-      top: 36px;
-      left: calc(12.5% + 20px);
-      right: calc(12.5% + 20px);
-      height: 2px;
-      background: repeating-linear-gradient(to right, var(--green) 0, var(--green) 8px, transparent 8px, transparent 16px);
-    }
-
-    .step {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 0 20px;
-      position: relative;
-    }
-
-    .step-num {
-      width: 72px;
-      height: 72px;
-      background: var(--green);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.8rem;
-      font-weight: 900;
-      color: white;
-      margin-bottom: 24px;
-      position: relative;
-      z-index: 1;
-      box-shadow: 0 4px 20px rgba(42,184,74,0.3);
-    }
-
-    .step-title {
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: var(--black);
-      margin-bottom: 10px;
-      font-family: 'Barlow Condensed', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-
-    .step-desc {
-      font-size: 0.9rem;
-      color: var(--gray-mid);
-      line-height: 1.6;
-    }
-
-    /* ─── ONDE APLICAMOS ─── */
-    #servicos { background: var(--green-deeper); }
-
-    #servicos .section-tag { color: rgba(255,255,255,0.6); }
-    #servicos .section-tag::before { background: rgba(255,255,255,0.4); }
-    #servicos .section-title { color: white; }
-    #servicos .section-lead { color: rgba(255,255,255,0.7); }
-
-    .servicos-header { margin-bottom: 56px; }
-
-    .servicos-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .servico-card {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius-lg);
-      padding: 32px 28px;
-      transition: background 0.25s, transform 0.2s;
-      cursor: default;
-    }
-
-    .servico-card:hover {
-      background: rgba(255,255,255,0.12);
-      transform: translateY(-4px);
-    }
-
-    .servico-icon {
-      width: 52px;
-      height: 52px;
-      background: var(--green);
-      border-radius: var(--radius);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-
-    .servico-icon svg { width: 26px; height: 26px; fill: white; }
-
-    .servico-name {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: white;
-      margin-bottom: 10px;
-    }
-
-    .servico-desc {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.6;
-    }
-
-    /* ─── DIFERENCIAIS ─── */
-    #diferenciais { background: var(--off-white); }
-
-    .dif-header { margin-bottom: 56px; }
-
-    .dif-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-
-    .dif-card {
-      background: white;
-      border-radius: var(--radius-lg);
-      padding: 36px 30px;
-      box-shadow: var(--shadow);
-      border-top: 3px solid var(--green);
-      transition: box-shadow 0.25s, transform 0.2s;
-    }
-
-    .dif-card:hover {
-      box-shadow: var(--shadow-lg);
-      transform: translateY(-3px);
-    }
-
-    .dif-num {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 3.5rem;
-      font-weight: 900;
-      color: var(--green-light);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-
-    .dif-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: var(--black);
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .dif-desc {
-      font-size: 0.9rem;
-      color: var(--gray-mid);
-      line-height: 1.65;
-    }
-
-    /* ─── GALERIA ─── */
-    #galeria { background: var(--white); }
-
-    .galeria-header { margin-bottom: 48px; }
-
-    .galeria-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 260px);
-      gap: 12px;
-    }
-
-    .galeria-item {
-      background: var(--gray-light);
-      border-radius: var(--radius);
-      overflow: hidden;
-      position: relative;
-      cursor: pointer;
-    }
-
-    .galeria-item:first-child {
-      grid-row: span 2;
-    }
-
-    .galeria-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s;
-    }
-
-    .galeria-item:hover img { transform: scale(1.04); }
-
-    .galeria-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 10px;
-      color: var(--gray-mid);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 12px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border: 2px dashed var(--gray-light);
-    }
-
-    .galeria-label {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-      color: white;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 16px 14px 10px;
-    }
-
-    /* ─── VÍDEOS ─── */
-    #videos { background: var(--off-white); }
-
-    .videos-header { margin-bottom: 48px; }
-
-    .videos-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    .video-wrap {
-      background: var(--gray-light);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      aspect-ratio: 9/16;
-      position: relative;
-      max-height: 520px;
-    }
-
-    /* Para usar: substitua .video-placeholder por <iframe src="..."> */
-    .video-wrap iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-    }
-
-    .video-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 14px;
-      color: var(--gray-mid);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 13px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .video-play-icon {
-      width: 64px;
-      height: 64px;
-      background: var(--green);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .video-play-icon svg { width: 28px; height: 28px; fill: white; margin-left: 4px; }
-
-    .video-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--gray-dark);
-      padding: 14px 18px;
-      background: white;
-      letter-spacing: 0.05em;
-    }
-
-    /* ─── DEPOIMENTOS ─── */
-    #depoimentos { background: var(--white); }
-
-    .dep-header { margin-bottom: 56px; }
-
-    .dep-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .dep-card {
-      background: var(--off-white);
-      border-radius: var(--radius-lg);
-      padding: 32px 28px;
-      position: relative;
-      transition: box-shadow 0.25s;
-    }
-
-    .dep-card:hover { box-shadow: var(--shadow); }
-
-    .dep-quote {
-      font-size: 3.5rem;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 900;
-      color: var(--green);
-      line-height: 1;
-      margin-bottom: 12px;
-      display: block;
-    }
-
-    .dep-stars {
-      display: flex;
-      gap: 3px;
-      margin-bottom: 16px;
-    }
-
-    .dep-stars svg { width: 16px; height: 16px; fill: #f5a623; }
-
-    .dep-text {
-      font-size: 0.95rem;
-      color: var(--gray-dark);
-      line-height: 1.7;
-      margin-bottom: 24px;
-      font-style: italic;
-    }
-
-    .dep-author {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .dep-avatar {
-      width: 44px;
-      height: 44px;
-      background: var(--green);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: white;
-      flex-shrink: 0;
-    }
-
-    .dep-name {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: var(--black);
-    }
-
-    .dep-role {
-      font-size: 0.8rem;
-      color: var(--gray-mid);
-      margin-top: 2px;
-    }
-
-    /* ─── ÁREA DE ATENDIMENTO ─── */
-    #atendimento { background: var(--off-white); }
-
-    .atend-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: start;
-    }
-
-    .atend-desc { margin-bottom: 32px; }
-
-    .municipios-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-top: 24px;
-    }
-
-    .municipio-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.9rem;
-      color: var(--gray-dark);
-      padding: 8px 12px;
-      background: white;
-      border-radius: var(--radius);
-      border-left: 3px solid var(--green);
-    }
-
-    .municipio-item svg { width: 14px; height: 14px; fill: var(--green); flex-shrink: 0; }
-
-    .map-wrap {
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      height: 420px;
-    }
-
-    .map-wrap iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-    }
-
-    /* ─── FAQ ─── */
-    #faq { background: var(--white); }
-
-    .faq-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 48px;
-    }
-
-    .faq-item {
-      border: 1px solid var(--gray-light);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-    }
-
-    .faq-q {
-      width: 100%;
-      background: none;
-      border: none;
-      padding: 22px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      cursor: pointer;
-      text-align: left;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--black);
-      letter-spacing: 0.02em;
-      transition: background 0.2s;
-    }
-
-    .faq-q:hover { background: var(--off-white); }
-
-    .faq-q.active { background: var(--green); color: white; }
-
-    .faq-chevron {
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
-      transition: transform 0.3s;
-    }
-
-    .faq-q.active .faq-chevron { transform: rotate(180deg); }
-    .faq-q.active .faq-chevron path { stroke: white; }
-
-    .faq-a {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease, padding 0.3s;
-      font-size: 0.95rem;
-      color: var(--gray-dark);
-      line-height: 1.7;
-    }
-
-    .faq-a.open {
-      max-height: 200px;
-      padding: 20px 24px;
-    }
-
-    /* ─── CTA FINAL ─── */
-    #contato {
-      background: var(--green);
-      padding: 88px 24px;
-    }
-
-    .cta-inner {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    #contato .section-tag { justify-content: center; color: rgba(255,255,255,0.7); }
-    #contato .section-tag::before { background: rgba(255,255,255,0.4); }
-
-    #contato .section-title { color: white; margin-bottom: 16px; }
-    #contato .section-lead { color: rgba(255,255,255,0.85); margin: 0 auto 40px; text-align: center; }
-
-    .cta-buttons {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 48px;
-    }
-
-    .btn-white {
-      background: white;
-      color: var(--green-darker, #166b2b);
-      padding: 18px 32px;
-      border-radius: var(--radius);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 800;
-      font-size: 17px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: transform 0.15s, box-shadow 0.2s;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.15);
-    }
-
-    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
-
-    .btn-outline-white {
-      background: transparent;
-      color: white;
-      padding: 17px 32px;
-      border-radius: var(--radius);
-      border: 2px solid rgba(255,255,255,0.5);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      font-size: 17px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: background 0.2s, border-color 0.2s;
-    }
-
-    .btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: white; }
-
-    /* Formulário simplificado */
-    .cta-form {
-      background: rgba(0,0,0,0.15);
-      border-radius: var(--radius-lg);
-      padding: 36px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr auto;
-      gap: 12px;
-      align-items: end;
-    }
-
-    .form-group label {
-      display: block;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 6px;
-    }
-
-    .form-group input {
-      width: 100%;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: var(--radius);
-      padding: 12px 16px;
-      color: white;
-      font-family: 'Barlow', sans-serif;
-      font-size: 0.95rem;
-      outline: none;
-      transition: border-color 0.2s, background 0.2s;
-    }
-
-    .form-group input::placeholder { color: rgba(255,255,255,0.4); }
-    .form-group input:focus { border-color: white; background: rgba(255,255,255,0.18); }
-
-    .btn-form {
-      background: white;
-      color: var(--green-deep, #166b2b);
-      border: none;
-      padding: 13px 24px;
-      border-radius: var(--radius);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 800;
-      font-size: 15px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: transform 0.15s;
-    }
-
-    .btn-form:hover { transform: translateY(-1px); }
-
-    /* ─── FOOTER ─── */
-    footer {
-      background: var(--black);
-      color: rgba(255,255,255,0.7);
-      padding: 56px 24px 32px;
-    }
-
-    .footer-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 48px;
-    }
-
-    .footer-brand .logo-badge { display: inline-block; margin-bottom: 16px; }
-
-    .footer-desc {
-      font-size: 0.9rem;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.55);
-      margin-bottom: 20px;
-      max-width: 320px;
-    }
-
-    .footer-social {
-      display: flex;
-      gap: 10px;
-    }
-
-    .social-link {
-      width: 38px;
-      height: 38px;
-      background: rgba(255,255,255,0.08);
-      border-radius: var(--radius);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-
-    .social-link:hover { background: var(--green); }
-    .social-link svg { width: 18px; height: 18px; fill: white; }
-
-    .footer-col-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: white;
-      margin-bottom: 18px;
-    }
-
-    .footer-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .footer-links a {
-      color: rgba(255,255,255,0.55);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: var(--green); }
-
-    .footer-info {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .info-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.5;
-    }
-
-    .info-item svg { width: 16px; height: 16px; fill: var(--green); flex-shrink: 0; margin-top: 2px; }
-
-    .footer-bottom {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding-top: 24px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .footer-bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.35); }
-
-    .footer-franquia {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.35);
-    }
-
-    .footer-franquia a { color: var(--green); text-decoration: none; }
-
-    /* ─── FLOATING WPP ─── */
-    .wpp-float {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      z-index: 999;
-      background: #25D366;
-      color: white;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 24px rgba(37,211,102,0.45);
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-      animation: pulse-wpp 2.5s infinite;
-    }
-
-    .wpp-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 32px rgba(37,211,102,0.6);
-      animation: none;
-    }
-
-    .wpp-float svg { width: 30px; height: 30px; fill: white; }
-
-    /* ─── ANIMATIONS ─── */
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes pulse-wpp {
-      0%, 100% { box-shadow: 0 4px 24px rgba(37,211,102,0.45); }
-      50% { box-shadow: 0 4px 40px rgba(37,211,102,0.70); }
-    }
-
-    /* ─── MOBILE NAV ─── */
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      top: 68px; left: 0; right: 0;
-      background: white;
-      border-bottom: 2px solid var(--green);
-      z-index: 999;
-      flex-direction: column;
-      padding: 16px 24px 24px;
-      gap: 4px;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .mobile-menu.open { display: flex; }
-
-    .mobile-menu a {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700;
-      font-size: 16px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--gray-dark);
-      text-decoration: none;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--gray-light);
-    }
-
-    .mobile-menu a:last-child { border-bottom: none; }
-    .mobile-menu a:hover { color: var(--green); }
-
-    /* ─── RESPONSIVE ─── */
-    /* ── TABLET (≤1024px) ── */
-    @media (max-width: 1024px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero-img { display: none; }
-      .hero-content { padding: 80px 32px 64px; }
-      .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
-      .steps-grid::before { display: none; }
-      .servicos-grid { grid-template-columns: repeat(2, 1fr); }
-      .dif-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .dep-grid { grid-template-columns: repeat(2, 1fr); }
-      .atend-grid { grid-template-columns: 1fr; gap: 36px; }
-    }
-
-    /* ── MOBILE (≤768px) ── */
-    @media (max-width: 768px) {
-      /* Header */
-      nav { display: none; }
-      .hamburger { display: flex; }
-      .header-inner { height: 60px; padding: 0 16px; }
-      .logo-city { display: none; }
-
-      /* Hero margin adjust for smaller header */
-      .hero {
-        margin-top: 60px;
-        grid-template-columns: 1fr;
-        min-height: 100svh;
-        background-image: url('2026-01-14%20(1).png');
-        background-size: cover;
-        background-position: center;
-      }
-      .hero::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to bottom, rgba(10,40,18,0.72) 0%, rgba(10,40,18,0.85) 100%);
-        z-index: 0;
-      }
-      .hero-img { display: none; }
-      .hero-content { position: relative; z-index: 1; }
-
-      /* Sections */
-      section { padding: 52px 16px; }
-      #contato { padding: 60px 16px; }
-
-      /* Hero */
-      .hero { min-height: auto; }
-      .hero-content { padding: 80px 20px 52px; }
-      .hero h1 { font-size: clamp(2rem, 7vw, 2.8rem); }
-      .hero-sub { font-size: 0.95rem; }
-      .hero-ctas { flex-direction: column; gap: 10px; }
-      .btn-primary, .btn-secondary { width: 100%; justify-content: center; padding: 14px 20px; font-size: 15px; }
-      .hero-stats { gap: 20px; flex-wrap: wrap; margin-top: 32px; padding-top: 24px; }
-      .hero-stat-num { font-size: 1.8rem; }
-      .hero-stat-label { font-size: 0.7rem; }
-      .hero-tag { font-size: 10px; padding: 5px 10px; }
-
-      /* Sobre */
-      .sobre-grid { grid-template-columns: 1fr; gap: 0; }
-      .sobre-img-wrap {
-        order: -1;
-        width: 100%;
-        margin-bottom: 28px;
-      }
-      /* Idêntico ao .galeria-item no mobile */
-      .sobre-img-placeholder {
-        background: var(--gray-light);
-        border-radius: var(--radius);
-        overflow: hidden;
-        position: relative;
-        height: 200px;
-        width: 100%;
-        display: block;
-      }
-      .sobre-img-placeholder img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-      .sobre-badge {
-        position: relative;
-        bottom: auto;
-        right: auto;
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 10px 18px;
-        border-radius: var(--radius);
-        margin-top: 14px;
-        box-shadow: var(--shadow);
-      }
-      .sobre-badge-num { font-size: 1.8rem; }
-
-      /* Steps */
-      .steps-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
-      .step-num { width: 56px; height: 56px; font-size: 1.5rem; }
-      .step-title { font-size: 1rem; }
-      .step-desc { font-size: 0.85rem; }
-
-      /* Serviços */
-      .servicos-grid { grid-template-columns: 1fr; gap: 14px; }
-      .servico-card { padding: 22px 20px; }
-
-      /* Diferenciais */
-      .dif-grid { grid-template-columns: 1fr; gap: 14px; }
-      .dif-card { padding: 24px 20px; }
-      .dif-num { font-size: 2.5rem; }
-
-      /* Galeria */
-      .galeria-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-        gap: 8px;
-      }
-      .galeria-item:first-child { grid-row: span 1; grid-column: span 2; }
-      .galeria-grid > .galeria-item:first-child { height: 240px; }
-      .galeria-grid > .galeria-item { height: 160px; }
-
-      /* Vídeos */
-      .videos-grid { grid-template-columns: 1fr; gap: 20px; }
-
-      /* Depoimentos */
-      .dep-grid { grid-template-columns: 1fr; gap: 16px; }
-      .dep-card { padding: 24px 20px; }
-
-      /* Atendimento */
-      .atend-grid { grid-template-columns: 1fr; gap: 32px; }
-      .map-wrap { height: 280px; }
-      .municipios-list { grid-template-columns: 1fr 1fr; gap: 8px; }
-
-      /* FAQ */
-      .faq-grid { grid-template-columns: 1fr; gap: 10px; }
-      .faq-q { font-size: 0.95rem; padding: 16px 18px; }
-
-      /* CTA */
-      .cta-inner { padding: 0 4px; }
-      #contato .section-title { font-size: 2rem; }
-      .cta-buttons { flex-direction: column; align-items: stretch; gap: 12px; }
-      .btn-white, .btn-outline-white {
-        width: 100%;
-        justify-content: center;
-        padding: 16px 20px;
-        font-size: 15px;
-      }
-      .cta-form {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        padding: 24px 16px;
-      }
-
-      /* Footer */
-      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
-      .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
-      .footer-desc { max-width: 100%; }
-
-      /* Section titles */
-      .section-title { font-size: clamp(1.7rem, 6vw, 2.4rem); }
-
-      /* Floating WPP */
-      .wpp-float { bottom: 16px; right: 16px; width: 52px; height: 52px; }
-      .wpp-float svg { width: 26px; height: 26px; }
-    }
-
-    /* ── SMALL MOBILE (≤480px) ── */
-    @media (max-width: 480px) {
-      /* Hero */
-      .hero-content { padding: 72px 16px 48px; }
-      .hero h1 { font-size: clamp(1.8rem, 8vw, 2.4rem); }
-      .hero-stats { justify-content: space-between; }
-      .hero-stat-num { font-size: 1.6rem; }
-
-      /* Steps */
-      .steps-grid { grid-template-columns: 1fr; gap: 24px; }
-      .step { align-items: flex-start; text-align: left; flex-direction: row; gap: 16px; }
-      .step-num { width: 48px; height: 48px; font-size: 1.3rem; flex-shrink: 0; margin-bottom: 0; }
-
-      /* Galeria */
-      .galeria-grid { grid-template-columns: 1fr; }
-      .galeria-item:first-child { grid-column: span 1; height: 220px; }
-      .galeria-grid > .galeria-item { height: 200px; }
-
-      /* Municipios */
-      .municipios-list { grid-template-columns: 1fr; }
-
-      /* Sobre badge inline */
-      .sobre-badge { width: 100%; justify-content: center; }
-
-      /* Serviços cards compactos */
-      .servico-card { padding: 18px 16px; }
-      .servico-icon { width: 44px; height: 44px; margin-bottom: 14px; }
-      .servico-name { font-size: 1.1rem; }
-
-      /* Diferenciais */
-      .dif-card { padding: 20px 16px; }
-
-      /* Depoimentos */
-      .dep-card { padding: 20px 16px; }
-
-      /* FAQ */
-      .faq-q { font-size: 0.88rem; padding: 14px 16px; }
-      .faq-a.open { padding: 16px; font-size: 0.88rem; }
-
-      /* Seção sobre */
-      .sobre-checks li { font-size: 0.9rem; }
-
-      /* Sections */
-      section { padding: 44px 16px; }
-      #contato { padding: 52px 16px; }
-
-      /* Section tag */
-      .section-tag { font-size: 11px; }
-    }
-
-    /* ─── SPLASH / INTRO SCREEN ─── */
-    #splash {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      background: var(--green-deeper);
-      overflow: hidden;
-      transition: opacity 0.6s ease, visibility 0.6s ease;
-    }
-
-    #splash.hidden {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-
-    /* Diagonal sweep overlay */
-    #splash::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        135deg,
-        transparent,
-        transparent 40px,
-        rgba(255,255,255,0.025) 40px,
-        rgba(255,255,255,0.025) 41px
-      );
-    }
-
-    /* Green light sweep animation */
-    #splash::after {
-      content: '';
-      position: absolute;
-      top: -100%;
-      left: -60%;
-      width: 60%;
-      height: 300%;
-      background: linear-gradient(
-        105deg,
-        transparent 0%,
-        rgba(255,255,255,0.06) 45%,
-        rgba(255,255,255,0.12) 50%,
-        rgba(255,255,255,0.06) 55%,
-        transparent 100%
-      );
-      animation: sweep 2.2s ease-in-out 0.4s forwards;
-      pointer-events: none;
-    }
-
-    @keyframes sweep {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(280%); }
-    }
-
-    .splash-logo-wrap {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0;
-      animation: splashIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-    }
-
-    @keyframes splashIn {
-      from { opacity: 0; transform: scale(0.7) translateY(30px); }
-      to   { opacity: 1; transform: scale(1) translateY(0); }
-    }
-
-    .splash-logo-img {
-      width: min(240px, 55vw);
-      filter: drop-shadow(0 16px 48px rgba(0,0,0,0.4));
-      animation: floatLogo 2.8s ease-in-out 0.8s infinite alternate;
-    }
-
-    @keyframes floatLogo {
-      from { transform: translateY(0px); }
-      to   { transform: translateY(-10px); }
-    }
-
-    .splash-city {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(1rem, 3vw, 1.3rem);
-      font-weight: 700;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.75);
-      margin-top: 20px;
-      animation: splashIn 0.8s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
-    }
-
-    .splash-city span {
-      color: var(--green);
-      letter-spacing: 0.2em;
-    }
-
-    .splash-tagline {
-      font-family: 'Barlow', sans-serif;
-      font-size: clamp(0.78rem, 2vw, 0.9rem);
-      color: rgba(255,255,255,0.45);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-top: 8px;
-      animation: splashIn 0.8s 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
-    }
-
-    /* Loading bar */
-    .splash-bar-wrap {
-      position: relative;
-      z-index: 1;
-      width: min(220px, 50vw);
-      height: 3px;
-      background: rgba(255,255,255,0.12);
-      border-radius: 99px;
-      margin-top: 44px;
-      overflow: hidden;
-      animation: splashIn 0.8s 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
-    }
-
-    .splash-bar {
-      height: 100%;
-      background: var(--green);
-      border-radius: 99px;
-      width: 0%;
-      animation: loadBar 1.6s 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-      box-shadow: 0 0 12px rgba(42,184,74,0.7);
-    }
-
-    @keyframes loadBar {
-      0%   { width: 0%; }
-      60%  { width: 75%; }
-      100% { width: 100%; }
-    }
-
-    /* Page reveal: panels split open */
-    .splash-panel-left,
-    .splash-panel-right {
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      width: 50%;
-      z-index: 9998;
-      background: var(--green-deeper);
-      transition: transform 0.7s cubic-bezier(0.76, 0, 0.24, 1);
-    }
-
-    .splash-panel-left  { left: 0; }
-    .splash-panel-right { right: 0; }
-
-    .splash-panel-left.open  { transform: translateX(-100%); }
-    .splash-panel-right.open { transform: translateX(100%); }
-  </style>
+
+        /* ===== INTRO OVERLAY ===== */
+        .intro-overlay {
+            position: fixed; inset: 0; z-index: 9999;
+            background: linear-gradient(135deg, #1a0f0d 0%, #2a1b18 50%, #1f120f 100%);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            padding: 1.5rem;
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .intro-overlay.fade-out {
+            opacity: 0; transform: scale(1.05); pointer-events: none;
+        }
+
+        .intro-video-container {
+            width: 100%; max-width: 420px;
+            animation: introBounce 0.6s ease;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+
+        .intro-video-container video {
+            width: 100%; height: auto; display: block;
+        }
+
+        @keyframes introBounce {
+            0% { transform: scale(0.3) rotate(-5deg); opacity: 0; }
+            60% { transform: scale(1.05) rotate(2deg); }
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+
+        .intro-progress-bar {
+            width: 220px; max-width: 80vw; height: 4px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 2px; margin-top: 1.5rem; overflow: hidden;
+        }
+
+        .intro-progress-fill {
+            width: 0%; height: 100%;
+            background: linear-gradient(90deg, var(--accent-rose), var(--accent-gold));
+            border-radius: 2px;
+            animation: progressFill 5s ease forwards;
+        }
+
+        @keyframes progressFill { 0% { width: 0%; } 100% { width: 100%; } }
+
+        .intro-text {
+            margin-top: 1.25rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            text-align: center;
+            animation: fadeInText 0.8s ease 0.6s backwards;
+        }
+
+        @keyframes fadeInText { to { opacity: 1; } }
+
+        .intro-skip {
+            position: absolute; bottom: 24px; right: 24px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            padding: 0.7rem 1.4rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.85rem; font-weight: 500;
+            min-height: var(--touch-min);
+            display: flex; align-items: center; gap: 0.5rem;
+            transition: var(--transition);
+            animation: fadeInText 0.8s ease 1s backwards;
+        }
+
+        .intro-skip:hover { background: var(--accent-gold); color: #0f0806; border-color: var(--accent-gold); }
+        .intro-skip:active { transform: scale(0.95); }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed; top: 16px; left: 50%; transform: translateX(-50%);
+            width: calc(100% - 32px); max-width: 1200px; z-index: 1000;
+            padding: 0.75rem 1.5rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border); border-radius: var(--radius-lg);
+            box-shadow: var(--glass-shadow);
+            transition: var(--transition);
+            opacity: 0; transform: translateX(-50%) translateY(-20px);
+            pointer-events: none;
+        }
+
+        header.visible { opacity: 1; transform: translateX(-50%) translateY(0); pointer-events: auto; }
+
+        nav { display: flex; justify-content: space-between; align-items: center; }
+
+        .logo img {
+            height: 48px; width: auto;
+            filter: drop-shadow(0 4px 12px rgba(212,165,116,0.2));
+            transition: var(--transition);
+        }
+
+        .nav-links { display: none; gap: 2rem; list-style: none; }
+        .nav-links a {
+            color: var(--text-secondary); text-decoration: none;
+            font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px;
+            transition: var(--transition); position: relative;
+        }
+        .nav-links a:hover { color: var(--accent-gold); }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+            background: var(--accent-gold); transition: var(--transition);
+        }
+        .nav-links a:hover::after { width: 100%; }
+
+        .mobile-menu {
+            width: var(--touch-min); height: var(--touch-min);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-primary); font-size: 1.4rem; cursor: pointer;
+            border-radius: 50%; transition: var(--transition);
+        }
+        .mobile-menu:hover { background: rgba(255,255,255,0.05); }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            padding: 120px 1.5rem 2rem; position: relative;
+        }
+
+        .hero-container {
+            max-width: 1200px; width: 100%;
+            display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; z-index: 2;
+        }
+
+        .hero-content { text-align: center; }
+
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.5rem 1rem; background: rgba(232,180,184,0.08);
+            border: 1px solid rgba(232,180,184,0.2); border-radius: 50px;
+            font-size: 0.8rem; color: var(--accent-rose); margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-logo img {
+            max-width: 180px; height: auto; margin-bottom: 1.5rem;
+            filter: drop-shadow(0 8px 24px rgba(212,165,116,0.15));
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.1; margin-bottom: 1.25rem;
+            background: linear-gradient(135deg, #fff 30%, var(--accent-gold) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 2.5rem;
+            max-width: 520px; margin-left: auto; margin-right: auto;
+        }
+
+        .hero-actions { display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+
+        .btn {
+            padding: 1rem 2.25rem; border-radius: 50px; text-decoration: none;
+            font-weight: 600; font-size: 1rem; min-height: var(--touch-min);
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+            transition: var(--transition); position: relative; overflow: hidden;
+            border: none; cursor: pointer; width: 100%; max-width: 260px;
+        }
+
+        .btn::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.2), transparent 60%);
+            opacity: 0; transition: opacity 0.3s;
+        }
+        .btn:hover::before { opacity: 1; }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-warm));
+            color: #0f0806; box-shadow: 0 10px 30px rgba(212,165,116,0.3);
+        }
+        .btn-secondary {
+            background: rgba(255,255,255,0.04); color: var(--text-primary);
+            border: 1px solid var(--glass-border); backdrop-filter: blur(10px);
+        }
+        .btn:active { transform: scale(0.97); }
+
+        .hero-video-wrapper {
+            position: relative; border-radius: var(--radius-lg); padding: 12px;
+            background: var(--glass-bg); border: 1px solid var(--glass-border);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+            transform: perspective(1000px) rotateY(-6deg) rotateX(4deg);
+            transition: var(--transition);
+        }
+        .hero-video-wrapper:hover { transform: perspective(1000px) rotateY(0deg) rotateX(0deg); }
+
+        .hero-video {
+            width: 100%; display: block; border-radius: var(--radius-md);
+            aspect-ratio: 16/10; object-fit: cover;
+        }
+
+        /* ===== SECTIONS ===== */
+        section { padding: 5rem 1.5rem; position: relative; z-index: 2; }
+        .container { max-width: 1100px; margin: 0 auto; width: 100%; }
+        .section-header { text-align: center; margin-bottom: 3.5rem; }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 0.75rem;
+            background: linear-gradient(90deg, #fff, var(--accent-gold));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle {
+            display: block; color: var(--accent-rose); font-size: 0.85rem;
+            text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 0.5rem; font-weight: 600;
+        }
+
+        .glass-card {
+            background: var(--glass-bg); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+            border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 1.75rem;
+            transition: var(--transition); position: relative; overflow: hidden;
+        }
+        .glass-card::before {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent 60%);
+            opacity: 0; transition: var(--transition);
+        }
+        .glass-card:hover { transform: translateY(-6px); border-color: rgba(212,165,116,0.3); }
+        .glass-card:hover::before { opacity: 1; }
+
+        .about-content { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: center; }
+        .about-text p { color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1rem; }
+
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+        .feature-item {
+            padding: 1.25rem; border-radius: var(--radius-sm);
+            background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border);
+            text-align: center; transition: var(--transition);
+        }
+        .feature-item:hover { border-color: var(--accent-gold); background: rgba(212,165,116,0.08); }
+        .feature-item i { font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 0.5rem; display: block; }
+        .feature-item h4 { font-size: 0.95rem; margin-bottom: 0.25rem; color: var(--text-primary); }
+        .feature-item p { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
+
+        .about-img {
+            width: 100%; max-width: 380px; border-radius: var(--radius-md); overflow: hidden;
+            border: 1px solid var(--glass-border); box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+        .about-img img { width: 100%; height: auto; display: block; transition: transform 0.6s ease; }
+        .about-img:hover img { transform: scale(1.05); }
+
+        .gallery-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+        .gallery-item {
+            position: relative; border-radius: var(--radius-md); overflow: hidden; aspect-ratio: 4/5;
+            cursor: pointer; border: 1px solid var(--glass-border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: var(--transition);
+        }
+        .gallery-item:hover { transform: translateY(-8px) scale(1.02); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(15,8,6,0.9) 0%, transparent 60%);
+            padding: 2rem 1.5rem 1.5rem; opacity: 0; transition: var(--transition);
+        }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-overlay h3 { font-size: 1.3rem; color: #fff; margin-bottom: 0.3rem; }
+        .gallery-overlay p { color: var(--accent-gold); font-size: 0.9rem; }
+
+        .contact-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; max-width: 500px; margin: 0 auto; }
+        .contact-card { text-align: center; }
+        .contact-icon {
+            width: 60px; height: 60px; background: rgba(212,165,116,0.1);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1rem; color: var(--accent-gold); font-size: 1.4rem;
+            border: 1px solid rgba(212,165,116,0.2);
+        }
+        .contact-card h3 { font-size: 1.2rem; margin-bottom: 0.3rem; color: var(--text-primary); }
+        .contact-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
+        .contact-card a { color: var(--accent-gold); text-decoration: none; font-weight: 600; transition: var(--transition); }
+        .contact-card a:hover { color: #fff; text-shadow: 0 0 12px rgba(212,165,116,0.5); }
+        .whatsapp-btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: #25D366; color: white !important;
+            padding: 0.75rem 1.5rem; border-radius: 50px; font-size: 0.95rem;
+        }
+
+        footer {
+            padding: 3rem 1.5rem 2rem; text-align: center;
+            border-top: 1px solid var(--glass-border); position: relative; z-index: 2;
+        }
+        .social-links { display: flex; justify-content: center; gap: 1.25rem; margin-bottom: 1.5rem; }
+        .social-links a {
+            width: 50px; height: 50px; border-radius: 50%;
+            background: var(--glass-bg); border: 1px solid var(--glass-border);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-secondary); font-size: 1.2rem; transition: var(--transition);
+        }
+        .social-links a:hover { background: var(--accent-gold); color: #0f0806; transform: translateY(-4px) scale(1.05); }
+        footer p { color: var(--text-muted); font-size: 0.85rem; }
+
+        /* ===== ANIMATIONS ===== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ===== RESPONSIVE ===== */
+        @media (min-width: 600px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (min-width: 768px) {
+            header { padding: 0.9rem 2rem; }
+            .logo img { height: 58px; }
+            .nav-links { display: flex; }
+            .mobile-menu { display: none; }
+            
+            .hero { padding: 140px 2rem 2rem; }
+            .hero-container { grid-template-columns: 1.1fr 0.9fr; gap: 4rem; }
+            .hero-content { text-align: left; }
+            .hero-actions { flex-direction: row; max-width: none; }
+            .btn { width: auto; }
+            .hero-video-wrapper { transform: perspective(1000px) rotateY(-8deg) rotateX(4deg); }
+            
+            .about-content { grid-template-columns: 1.2fr 0.8fr; }
+            .about-text { text-align: left; }
+            .about-img { max-width: 100%; }
+            
+            .contact-grid { grid-template-columns: repeat(3, 1fr); max-width: 900px; }
+            .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+            
+            section { padding: 6rem 2rem; }
+            h2 { font-size: 2.8rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+            .orb { animation: none; }
+        }
+    </style>
 </head>
+<body class="intro-active">
 
-<body>
-
-  <!-- ─── SPLASH INTRO ─── -->
-  <div id="splash">
-    <div class="splash-logo-wrap">
-      <img src="logo-protege-piso.jpg" alt="Protege Piso" class="splash-logo-img" draggable="false" />
-      <div class="splash-city">Boa Vista &nbsp;&middot;&nbsp; <span>Roraima</span></div>
-      <div class="splash-tagline">Proteção profissional de pisos</div>
-    </div>
-    <div class="splash-bar-wrap"><div class="splash-bar"></div></div>
-  </div>
-  <div class="splash-panel-left"  id="panelLeft"></div>
-  <div class="splash-panel-right" id="panelRight"></div>
-
-
-  <!-- ─── HEADER ─── -->
-  <header>
-    <div class="header-inner">
-      <a href="#home" class="logo">
-        <img src="logo-protege-piso.jpg" alt="Protege Piso Boa Vista" style="height:48px;width:auto;display:block;filter:drop-shadow(0 1px 4px rgba(0,0,0,0.15));" />
-        <div class="logo-city">
-          Boa Vista
-          <em>Roraima — RR</em>
-        </div>
-      </a>
-
-      <nav>
-        <a href="#sobre">Sobre</a>
-        <a href="#como-funciona">Como Funciona</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#galeria">Galeria</a>
-        <a href="#depoimentos">Depoimentos</a>
-        <a href="#faq">FAQ</a>
-        <a href="https://wa.me/5595991333368?text=Olá!%20Gostaria%20de%20um%20orçamento%20de%20proteção%20de%20piso%20para%20minha%20obra." target="_blank" rel="noopener" class="btn-wpp-header">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.105.544 4.082 1.494 5.8L0 24l6.356-1.479A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.365l-.36-.213-3.71.863.879-3.601-.234-.375A9.818 9.818 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/></svg>
-          Orçamento Grátis
-        </a>
-      </nav>
-
-      <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
-  </header>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#sobre" onclick="toggleMenu()">Sobre</a>
-    <a href="#como-funciona" onclick="toggleMenu()">Como Funciona</a>
-    <a href="#servicos" onclick="toggleMenu()">Serviços</a>
-    <a href="#galeria" onclick="toggleMenu()">Galeria</a>
-    <a href="#depoimentos" onclick="toggleMenu()">Depoimentos</a>
-    <a href="#faq" onclick="toggleMenu()">FAQ</a>
-    <a href="https://wa.me/5595991333368?text=Olá!%20Gostaria%20de%20um%20orçamento%20de%20proteção%20de%20piso%20para%20minha%20obra." target="_blank" rel="noopener">📲 Falar no WhatsApp</a>
-  </div>
-
-  <!-- ─── HERO ─── -->
-  <section id="home" class="hero">
-    <div class="hero-img">
-      <img src="2026-01-14%20(1).png" alt="Proteção de piso em área externa durante obra em Boa Vista RR — Protege Piso" loading="eager" />
+    <!-- SCROLL PROGRESS -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- ANIMATED BACKGROUND -->
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
     </div>
 
-    <div class="hero-content">
-      <div class="hero-tag">
-        <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
-        Boa Vista · Roraima
-      </div>
-
-      <h1>
-        Existe uma solução definitiva<br />
-        para <em>proteger o seu piso</em><br />
-        durante obra ou reforma.
-      </h1>
-
-      <p class="hero-sub">
-        A Protege Piso Boa Vista oferece locação de placas de proteção profissional para pisos — com entrega, instalação, manutenção e retirada incluídos. Atendemos Boa Vista e municípios num raio de até 200 km.
-      </p>
-
-      <div class="hero-ctas">
-        <a href="https://wa.me/5595991333368?text=Olá!%20Gostaria%20de%20um%20orçamento%20de%20proteção%20de%20piso%20para%20minha%20obra%20em%20Boa%20Vista." target="_blank" rel="noopener" class="btn-primary">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.105.544 4.082 1.494 5.8L0 24l6.356-1.479A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.365l-.36-.213-3.71.863.879-3.601-.234-.375A9.818 9.818 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/></svg>
-          Solicitar Orçamento Grátis
-        </a>
-        <a href="tel:+5595991333368" class="btn-secondary">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          (95) 99133-3368
-        </a>
-      </div>
-
-      <div class="hero-stats">
-        <div>
-          <div class="hero-stat-num">20+</div>
-          <div class="hero-stat-label">Anos de experiência<br />da franqueadora</div>
+    <!-- ===== INTRO OVERLAY ===== -->
+    <div class="intro-overlay" id="introOverlay">
+        <div class="intro-video-container">
+            <video id="introVideo" autoplay muted playsinline>
+                <source src="intro-trem-bao.mp4" type="video/mp4">
+            </video>
         </div>
-        <div>
-          <div class="hero-stat-num">200<small style="font-size:1.4rem">km</small></div>
-          <div class="hero-stat-label">Raio de atendimento<br />em Roraima</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">100%</div>
-          <div class="hero-stat-label">Serviço completo<br />incluso</div>
-        </div>
-      </div>
+        <div class="intro-progress-bar"><div class="intro-progress-fill"></div></div>
+        <p class="intro-text">Bem-vindo à Doceria Trem Bão</p>
+        <button class="intro-skip" id="skipBtn"><i class="fas fa-forward"></i> Pular</button>
     </div>
-  </section>
 
-  <!-- ─── SOBRE ─── -->
-  <section id="sobre">
-    <div class="container">
-      <div class="sobre-grid">
-        <div class="sobre-img-wrap">
-          <img src="2026-01-14%20(1).png" alt="Instalação de proteção de piso Protege Piso Boa Vista em obra" loading="lazy" />
-          <div class="sobre-badge">
-            <div class="sobre-badge-num">+18</div>
-            <div class="sobre-badge-label">Anos de experiência<br />nacional</div>
-          </div>
-        </div>
+    <!-- HEADER -->
+    <header id="mainHeader">
+        <nav>
+            <a href="#" class="logo"><img src="logo-trem-bao-trem.png" alt="Trem Bão"></a>
+            <div class="mobile-menu" id="mobileMenu"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#galeria">Menu</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="sobre-content">
-          <div class="section-tag">Quem somos</div>
-          <h2 class="section-title">
-            Proteção profissional de pisos<br />
-            em <em>Boa Vista e Roraima</em>
-          </h2>
-          <p class="section-lead">
-            A Protege Piso Boa Vista é franqueada da maior rede de proteção profissional de pisos do Brasil. Somos fabricantes e pioneiros em soluções para obras e reformas, com tecnologia nacional premiada e produtos patenteados.
-          </p>
-          <p class="section-lead" style="margin-top:14px;">
-            Nossa missão em Boa Vista é garantir que o piso que você investiu continue perfeito do início ao fim da obra — sem arranhões, manchas ou danos causados por impactos, líquidos e resíduos.
-          </p>
-
-          <ul class="sobre-checks" style="margin-top:28px;">
-            <li>
-              <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
-              Franquia com atuação desde 2005, pioneira e fabricante do sistema
-            </li>
-            <li>
-              <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
-              Produtos patenteados com eficácia comprovada e tecnologia brasileira
-            </li>
-            <li>
-              <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
-              Equipe treinada e capacitada em Boa Vista
-            </li>
-            <li>
-              <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
-              Atendemos construtoras, arquitetos, reformadores e clientes finais
-            </li>
-            <li>
-              <span class="check-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>
-              Placas 100% recicláveis — protegemos o piso e o meio ambiente
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── COMO FUNCIONA ─── -->
-  <section id="como-funciona">
-    <div class="container">
-      <div class="steps-header">
-        <div class="section-tag">Processo simples</div>
-        <h2 class="section-title">Como funciona a proteção<br />de piso em <em>4 passos</em></h2>
-        <p class="section-lead">Da solicitação do orçamento até a retirada das placas, cuidamos de tudo para você. Sem complicação.</p>
-      </div>
-
-      <div class="steps-grid">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-title">Orçamento Gratuito</div>
-          <p class="step-desc">Entre em contato pelo WhatsApp ou telefone. Informamos o tamanho da área e o período da obra — e você recebe uma proposta sem compromisso.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-title">Entrega e Instalação</div>
-          <p class="step-desc">Nossa equipe leva as placas até a sua obra em Boa Vista ou município próximo, e faz a instalação profissional no local indicado.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-title">Proteção Ativa</div>
-          <p class="step-desc">Durante toda a obra, as placas protegem o piso contra impactos, líquidos, cimento e trânsito pesado — com manutenção inclusa se necessário.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <div class="step-title">Retirada sem Complicação</div>
-          <p class="step-desc">Ao término da obra, buscamos todas as placas. Seu piso fica perfeito. Zero custo com retrabalho ou substituição de pisos danificados.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── SERVIÇOS / ONDE APLICAMOS ─── -->
-  <section id="servicos">
-    <div class="container">
-      <div class="servicos-header">
-        <div class="section-tag">Aplicações</div>
-        <h2 class="section-title" style="color:white;">Onde a Protege Piso<br /><em style="color:var(--green);">pode ser aplicada</em></h2>
-        <p class="section-lead">Nosso sistema de proteção funciona em qualquer tipo de superfície e ambiente da obra ou reforma.</p>
-      </div>
-
-      <div class="servicos-grid">
-        <div class="servico-card">
-          <div class="servico-icon">
-            <svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
-          </div>
-          <div class="servico-name">Porcelanato e Cerâmica</div>
-          <p class="servico-desc">Proteção total para os tipos de piso mais comuns em residências e comerciais de Boa Vista, evitando riscos, manchas e quebras durante a reforma.</p>
-        </div>
-
-        <div class="servico-card">
-          <div class="servico-icon">
-            <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 008 20c4 0 4-2 8-2s4 2 8 2v-2c-4 0-4-2-8-2-1.13 0-1.9.16-2.53.33C14.28 11.86 17 8 17 8z"/></svg>
-          </div>
-          <div class="servico-name">Piso de Madeira</div>
-          <p class="servico-desc">Proteção específica para pisos de madeira, laminado e vinílico, preservando o acabamento nobre durante toda a obra.</p>
-        </div>
-
-        <div class="servico-card">
-          <div class="servico-icon">
-            <svg viewBox="0 0 24 24"><path d="M4 4h7V2H4C2.9 2 2 2.9 2 4v7h2V4zm16 0h-7V2h7c1.1 0 2 .9 2 2v7h-2V4zM4 20h7v2H4c-1.1 0-2-.9-2-2v-7h2v7zm16 0h-7v2h7c1.1 0 2-.9 2-2v-7h-2v7z"/></svg>
-          </div>
-          <div class="servico-name">Mármore e Granito</div>
-          <p class="servico-desc">Pisos de alto padrão exigem cuidado especial. O sistema Protege Piso é ideal para proteger superfícies nobres sem deixar marcas ou arranhões.</p>
-        </div>
-
-        <div class="servico-card">
-          <div class="servico-icon">
-            <svg viewBox="0 0 24 24"><path d="M18 18.5c0 .83-.67 1.5-1.5 1.5S15 19.33 15 18.5 15.67 17 16.5 17s1.5.67 1.5 1.5zm-13 0c0 .83-.67 1.5-1.5 1.5S2 19.33 2 18.5 2.67 17 3.5 17 5 17.67 5 18.5zM3.5 11L5 16h14l1.5-5H3.5zm15.2-6L21 8H3L4.3 5h14.4zM1 4l2 1v1H1V4z"/></svg>
-          </div>
-          <div class="servico-name">Escadas e Rampas</div>
-          <p class="servico-desc">Proteção modular adaptável para escadas, rampas e degraus, garantindo segurança no trânsito de operários e equipamentos.</p>
-        </div>
-
-        <div class="servico-card">
-          <div class="servico-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-5h2v5h6v-8h3L12 3zm0 12.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
-          </div>
-          <div class="servico-name">Áreas Externas</div>
-          <p class="servico-desc">Único sistema com desempenho garantido para áreas externas em Boa Vista, resistindo à exposição solar, chuva e intempéries climáticas da região.</p>
-        </div>
-
-        <div class="servico-card">
-          <div class="servico-icon">
-            <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
-          </div>
-          <div class="servico-name">Carga e Descarga</div>
-          <p class="servico-desc">As placas suportam o trânsito de andaimes, carriolas e empilhadeiras. Perfeitas para áreas de fluxo intenso nas obras de grande porte.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── DIFERENCIAIS ─── -->
-  <section id="diferenciais">
-    <div class="container">
-      <div class="dif-header">
-        <div class="section-tag">Por que escolher a Protege Piso</div>
-        <h2 class="section-title">6 razões para confiar<br />no nosso <em>sistema</em></h2>
-      </div>
-
-      <div class="dif-grid">
-        <div class="dif-card">
-          <div class="dif-num">01</div>
-          <div class="dif-title">Serviço Completo Incluído</div>
-          <p class="dif-desc">Entrega, instalação, manutenção durante a obra e retirada final — tudo feito pela nossa equipe. Você não precisa se preocupar com nada.</p>
-        </div>
-        <div class="dif-card">
-          <div class="dif-num">02</div>
-          <div class="dif-title">Sem Uso de Adesivos</div>
-          <p class="dif-desc">As placas são fixadas pelo próprio peso e encaixe geométrico intertravado. Não deixam resíduo, cola ou qualquer marca no seu piso.</p>
-        </div>
-        <div class="dif-card">
-          <div class="dif-num">03</div>
-          <div class="dif-title">Alta Resistência</div>
-          <p class="dif-desc">Suportam impactos, andaimes, carriolas e empilhadeiras. Vedação eficaz para tintas, cimento, argamassa e resíduos líquidos e sólidos.</p>
-        </div>
-        <div class="dif-card">
-          <div class="dif-num">04</div>
-          <div class="dif-title">Tecnologia Patenteada</div>
-          <p class="dif-desc">Produto nacional, premiado e na 5ª geração de desenvolvimento. Pioneiros no segmento há mais de 18 anos com evolução contínua.</p>
-        </div>
-        <div class="dif-card">
-          <div class="dif-num">05</div>
-          <div class="dif-title">Ecologicamente Correto</div>
-          <p class="dif-desc">Placas 100% recicláveis e reutilizáveis. Após a retirada, são limpas e relocadas — sem geração de resíduos ambientais na sua obra.</p>
-        </div>
-        <div class="dif-card">
-          <div class="dif-num">06</div>
-          <div class="dif-title">Economia Real</div>
-          <p class="dif-desc">Evite o custo de substituir pisos danificados e a mão de obra de reinstalação. O investimento na proteção é sempre menor que o custo do retrabalho.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── GALERIA ─── -->
-  <section id="galeria">
-    <div class="container">
-      <div class="galeria-header">
-        <div class="section-tag">Nosso trabalho</div>
-        <h2 class="section-title">Galeria de <em>projetos</em><br />realizados em Boa Vista</h2>
-      </div>
-
-      <div class="galeria-grid">
-        <!-- Galeria 1: maior -->
-        <div class="galeria-item">
-          <img src="2026-01-14.jpg" alt="Proteção de piso em escada e hall — Protege Piso Boa Vista" loading="lazy" />
-          <div class="galeria-label">Escada + Piso — Instalação Residencial</div>
-        </div>
-
-        <div class="galeria-item">
-          <img src="2026-01-14.png" alt="Proteção de degraus de escada com placas Protege Piso em Boa Vista" loading="lazy" />
-          <div class="galeria-label">Escadas Protegidas — Boa Vista</div>
-        </div>
-        <div class="galeria-item">
-          <img src="2026-01-14%20(2).png" alt="Proteção de piso em área externa com placas Protege Piso" loading="lazy" />
-          <div class="galeria-label">Área Externa — Placas Instaladas</div>
-        </div>
-        <div class="galeria-item">
-          <img src="2026-01-14%20(3).png" alt="Proteção de piso interno em obra residencial — Protege Piso Boa Vista" loading="lazy" />
-          <div class="galeria-label">Piso Interno — Cobertura Total</div>
-        </div>
-        <div class="galeria-item">
-          <img src="2026-01-14%20(1).png" alt="Proteção de piso em varanda e área externa durante reforma em Boa Vista" loading="lazy" />
-          <div class="galeria-label">Varanda — Área Externa Protegida</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── VÍDEOS ─── -->
-  <section id="videos">
-    <div class="container">
-      <div class="videos-header">
-        <div class="section-tag">Veja na prática</div>
-        <h2 class="section-title">Vídeos — o sistema<br /><em>Protege Piso</em> em ação</h2>
-      </div>
-
-      <div class="videos-grid">
-        <div>
-          <div class="video-wrap">
-            <iframe
-              src="https://www.youtube.com/embed/2kXXyXLdALk"
-              title="Protege Piso Boa Vista — Instalação de proteção de piso em obra"
-              allowfullscreen
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            ></iframe>
-          </div>
-          <div class="video-title">Instalação das Placas de Proteção — Passo a Passo</div>
-        </div>
-
-        <div>
-          <div class="video-wrap">
-            <iframe
-              src="https://www.youtube.com/embed/eduY6NeRYsM"
-              title="Protege Piso Boa Vista — Sistema de proteção de piso em ação"
-              allowfullscreen
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            ></iframe>
-          </div>
-          <div class="video-title">Resistência das Placas — Testes e Demonstração</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── DEPOIMENTOS ─── -->
-  <section id="depoimentos">
-    <div class="container">
-      <div class="dep-header">
-        <div class="section-tag">O que dizem nossos clientes</div>
-        <h2 class="section-title">Depoimentos de quem<br />confiou na <em>Protege Piso</em></h2>
-      </div>
-
-      <div class="dep-grid">
-        <!-- SUBSTITUA pelo nome, cargo/bairro e texto real do cliente -->
-        <div class="dep-card">
-          <span class="dep-quote">"</span>
-          <div class="dep-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          </div>
-          <p class="dep-text">
-            [Depoimento real do cliente aqui. Substitua este texto pelo depoimento enviado, incluindo o nome e bairro ou cidade do cliente para melhorar o SEO local.]
-          </p>
-          <div class="dep-author">
-            <div class="dep-avatar">A</div>
-            <div>
-              <div class="dep-name">Nome do Cliente</div>
-              <div class="dep-role">Bairro / Cidade — RR</div>
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fas fa-star"></i> Artesanal & Premium</div>
+                <div class="hero-logo"><img src="logo-trem-bao-texto.png" alt="Trem Bão"></div>
+                <h1 class="hero-title reveal">Delícias que encantam a <span style="color:var(--accent-gold); font-style:italic;">alma</span></h1>
+                <p class="hero-desc reveal" style="transition-delay:0.1s">Doceria premium em Corumbá-MS. Bolos personalizados, doces finos e aquele toque especial que transforma momentos.</p>
+                <div class="hero-actions reveal" style="transition-delay:0.2s">
+                    <a href="https://wa.me/5567984060550" class="btn btn-primary magnetic"><i class="fab fa-whatsapp"></i> Encomendar</a>
+                    <a href="https://instagram.com/trembao" class="btn btn-secondary magnetic"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
             </div>
-          </div>
-        </div>
-
-        <div class="dep-card">
-          <span class="dep-quote">"</span>
-          <div class="dep-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          </div>
-          <p class="dep-text">
-            [Depoimento real do cliente aqui. Substitua este texto pelo depoimento enviado, incluindo o nome e bairro ou cidade do cliente para melhorar o SEO local.]
-          </p>
-          <div class="dep-author">
-            <div class="dep-avatar">B</div>
-            <div>
-              <div class="dep-name">Nome do Cliente</div>
-              <div class="dep-role">Bairro / Cidade — RR</div>
+            <div class="hero-video-wrapper reveal" style="transition-delay:0.3s">
+                <video class="hero-video" autoplay loop muted playsinline poster="brigadeiro-poster.jpg">
+                    <source src="brigadeiro-girando.mp4" type="video/mp4">
+                </video>
             </div>
-          </div>
         </div>
+    </section>
 
-        <div class="dep-card">
-          <span class="dep-quote">"</span>
-          <div class="dep-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          </div>
-          <p class="dep-text">
-            [Depoimento real do cliente aqui. Substitua este texto pelo depoimento enviado, incluindo o nome e bairro ou cidade do cliente para melhorar o SEO local.]
-          </p>
-          <div class="dep-author">
-            <div class="dep-avatar">C</div>
-            <div>
-              <div class="dep-name">Nome do Cliente</div>
-              <div class="dep-role">Bairro / Cidade — RR</div>
+    <!-- SOBRE -->
+    <section class="about" id="sobre">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-subtitle">Nossa Essência</span>
+                <h2>Artesanato com Alma</h2>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── ÁREA DE ATENDIMENTO ─── -->
-  <section id="atendimento">
-    <div class="container">
-      <div class="atend-grid">
-        <div>
-          <div class="section-tag">Cobertura regional</div>
-          <h2 class="section-title">Onde atendemos<br />em <em>Roraima</em></h2>
-          <p class="section-lead atend-desc">
-            Atendemos Boa Vista e todos os municípios num raio de até 200 km. Se você tem uma obra ou reforma na região e precisa proteger seu piso, entre em contato e confirme a disponibilidade para o seu município.
-          </p>
-
-          <div class="municipios-list">
-            <div class="municipio-item">
-              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              Boa Vista (sede)
+            <div class="about-content">
+                <div class="about-text reveal">
+                    <p>Nascida na Rua Cáceres 946, a <strong style="color:var(--accent-gold)">Doceria Trem Bão</strong> nasceu da paixão por transformar ingredientes selecionados em memórias doces. Cada receita é um equilíbrio perfeito entre tradição e inovação.</p>
+                    <p>Não vendemos apenas doces; entregamos a felicidade de compartilhar momentos especiais.</p>
+                    <div class="feature-grid">
+                        <div class="feature-item"><i class="fas fa-gem"></i><h4>Premium</h4><p>Ingredientes selecionados</p></div>
+                        <div class="feature-item"><i class="fas fa-hand-sparkles"></i><h4>Artesanal</h4><p>Feito à mão com carinho</p></div>
+                        <div class="feature-item"><i class="fas fa-wand-magic-sparkles"></i><h4>Personalizado</h4><p>Do seu jeitinho</p></div>
+                        <div class="feature-item"><i class="fas fa-truck-fast"></i><h4>Entrega</h4><p>Corumbá e região</p></div>
+                    </div>
+                </div>
+                <div class="about-img reveal" style="transition-delay:0.2s">
+                    <img src="preparando-doces.png" alt="Preparando doces" loading="lazy">
+                </div>
             </div>
-            <div class="municipio-item">
-              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              Rorainópolis
+        </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="gallery" id="galeria">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-subtitle">Nossas Criações</span>
+                <h2>Menu de Sabores</h2>
             </div>
-            <div class="municipio-item">
-              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              Caracaraí
+            <div class="gallery-grid">
+                <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80" alt="Chocolate" loading="lazy"><div class="gallery-overlay"><h3>Chocolate Noir</h3><p>Ganache belga & cacau 70%</p></div></div>
+                <div class="gallery-item reveal" style="transition-delay:0.1s"><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80" alt="Morango" loading="lazy"><div class="gallery-overlay"><h3>Red Velvet</h3><p>Clássico com toque de avelã</p></div></div>
+                <div class="gallery-item reveal" style="transition-delay:0.2s"><img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=80" alt="Brigadeiros" loading="lazy"><div class="gallery-overlay"><h3>Brigadeiros Gold</h3><p>Edição limitada premium</p></div></div>
             </div>
-            <div class="municipio-item">
-              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              Mucajaí
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="contact" id="contato">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-subtitle">Fale Conosco</span>
+                <h2>Faça seu Pedido</h2>
             </div>
-            <div class="municipio-item">
-              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              Iracema
+            <div class="contact-grid">
+                <div class="glass-card contact-card reveal"><div class="contact-icon"><i class="fab fa-whatsapp"></i></div><h3>WhatsApp</h3><p>Clique para conversar</p><a href="https://wa.me/5567984060550" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> (67) 98406-0550</a></div>
+                <div class="glass-card contact-card reveal" style="transition-delay:0.1s"><div class="contact-icon"><i class="fab fa-instagram"></i></div><h3>Instagram</h3><p>Siga e fique por dentro</p><a href="https://instagram.com/trembao">@trembao</a></div>
+                <div class="glass-card contact-card reveal" style="transition-delay:0.2s"><div class="contact-icon"><i class="fas fa-map-pin"></i></div><h3>Endereço</h3><p>Rua Cáceres, 946<br>Corumbá - MS</p></div>
             </div>
-            <div class="municipio-item">
-              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              Alto Alegre
-            </div>
-            <div class="municipio-item">
-              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              Cantá
-            </div>
-            <div class="municipio-item">
-              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              Bonfim
-            </div>
-            <div class="municipio-item" style="grid-column: span 2; justify-content: center; background: var(--green-light); border-left-color: var(--green-dark); color: var(--green-dark); font-weight: 600;">
-              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              E demais municípios num raio de até 200 km
-            </div>
-          </div>
         </div>
+    </section>
 
-        <div class="map-wrap">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126034.5!2d-60.7758!3d2.8196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8d9a23f10f9fe1a5%3A0x12345abcdef!2sBoa%20Vista%2C%20Roraima!5e0!3m2!1spt-BR!2sbr!4v1700000000000"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Mapa de atendimento Protege Piso Boa Vista"
-          ></iframe>
+    <footer>
+        <div class="social-links">
+            <a href="https://instagram.com/trembao" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5567984060550" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://facebook.com" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
         </div>
-      </div>
-    </div>
-  </section>
+        <p>&copy; 2026 Doceria Trem Bão. Todos os direitos reservados.</p>
+    </footer>
 
-  <!-- ─── FAQ ─── -->
-  <section id="faq">
-    <div class="container">
-      <div style="text-align:center;margin-bottom:8px;">
-        <div class="section-tag" style="justify-content:center;">Dúvidas frequentes</div>
-        <h2 class="section-title">Perguntas sobre<br />proteção de piso em <em>Boa Vista</em></h2>
-      </div>
+    <script>
+        // ===== INTRO CONTROL =====
+        const introOverlay = document.getElementById('introOverlay');
+        const introVideo = document.getElementById('introVideo');
+        const skipBtn = document.getElementById('skipBtn');
+        const mainHeader = document.getElementById('mainHeader');
+        const body = document.body;
 
-      <div class="faq-grid">
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            Como funciona o sistema Protege Piso?
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#2ab84a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="faq-a">
-            A Protege Piso oferece locação completa: nossa equipe entrega as placas na sua obra em Boa Vista, faz a instalação, realiza manutenção durante o período e retira tudo ao final. Você paga apenas pelos m² necessários e pelo período de uso.
-          </div>
-        </div>
+        function closeIntro() {
+            introOverlay.classList.add('fade-out');
+            mainHeader.classList.add('visible');
+            body.classList.remove('intro-active');
+            document.querySelector('.bg-orbs').style.opacity = '1';
+            
+            setTimeout(() => {
+                introOverlay.style.display = 'none';
+                initScrollAnimations();
+                initMagneticButtons();
+            }, 700);
+        }
 
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            Quais tipos de piso a Protege Piso protege?
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#2ab84a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="faq-a">
-            Protegemos porcelanato, cerâmica, piso de madeira, mármore, granito, pisos externos, escadas, rampas e áreas de carga e descarga. O sistema funciona em qualquer tipo de superfície.
-          </div>
-        </div>
+        introVideo.addEventListener('ended', closeIntro);
+        setTimeout(closeIntro, 5000); // Fallback 5s
+        skipBtn.addEventListener('click', closeIntro);
 
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            A Protege Piso atende onde em Roraima?
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#2ab84a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="faq-a">
-            Atendemos Boa Vista e todos os municípios num raio de até 200 km, cobrindo grande parte do estado de Roraima, incluindo Rorainópolis, Caracaraí, Mucajaí, Iracema, Alto Alegre, Cantá e Bonfim.
-          </div>
-        </div>
+        // ===== SCROLL PROGRESS =====
+        const progress = document.getElementById('scrollProgress');
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            progress.style.width = `${(scrollTop / scrollHeight) * 100}%`;
+        });
 
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            Quanto custa a proteção de piso?
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#2ab84a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="faq-a">
-            O valor é calculado por m² e pelo período de locação. Solicite um orçamento gratuito pelo WhatsApp e nossa equipe enviará uma proposta personalizada para a sua obra ou reforma em Boa Vista.
-          </div>
-        </div>
+        // ===== HEADER VISIBILITY =====
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            mainHeader.classList.toggle('visible', currentScroll > 50);
+            lastScroll = currentScroll;
+        });
 
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            As placas danificam ou deixam marcas no piso?
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#2ab84a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="faq-a">
-            Não. As placas são fixadas pelo próprio peso e geometria intertravada, sem uso de adesivos. Elas protegem sem deixar marcas, resíduo ou qualquer dano ao piso — seja cerâmico, porcelanato ou madeira.
-          </div>
-        </div>
+        // ===== MOBILE MENU =====
+        const menuBtn = document.getElementById('mobileMenu');
+        const nav = document.getElementById('navLinks');
+        menuBtn.addEventListener('click', () => nav.classList.toggle('active'));
+        nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('active')));
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !menuBtn.contains(e.target)) nav.classList.remove('active');
+        });
 
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            Qual é a resistência das placas de proteção?
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#2ab84a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="faq-a">
-            As placas suportam grandes impactos, fluxo intenso de pessoas, andaimes, carriolas e trânsito de empilhadeiras. Têm excelente vedação para tintas, cimento, argamassa e resíduos sólidos e líquidos.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        // ===== MAGNETIC BUTTONS =====
+        function initMagneticButtons() {
+            document.querySelectorAll('.magnetic').forEach(btn => {
+                btn.addEventListener('mousemove', e => {
+                    const rect = btn.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / rect.width) * 100;
+                    const y = ((e.clientY - rect.top) / rect.height) * 100;
+                    btn.style.setProperty('--x', `${x}%`);
+                    btn.style.setProperty('--y', `${y}%`);
+                });
+            });
+        }
 
-  <!-- ─── CTA FINAL ─── -->
-  <section id="contato">
-    <div class="cta-inner">
-      <div class="section-tag">Fale com a gente</div>
-      <h2 class="section-title">Proteja seu piso antes<br />que seja tarde demais</h2>
-      <p class="section-lead">
-        Solicite agora um orçamento gratuito para a sua obra ou reforma em Boa Vista e região. Atendimento rápido pelo WhatsApp!
-      </p>
+        // ===== SCROLL REVEAL =====
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
-      <div class="cta-buttons">
-        <a href="https://wa.me/5595991333368?text=Olá!%20Gostaria%20de%20um%20orçamento%20de%20proteção%20de%20piso%20para%20minha%20obra%20em%20Boa%20Vista." target="_blank" rel="noopener" class="btn-white">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="#166b2b"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.105.544 4.082 1.494 5.8L0 24l6.356-1.479A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.365l-.36-.213-3.71.863.879-3.601-.234-.375A9.818 9.818 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/></svg>
-          Solicitar Orçamento no WhatsApp
-        </a>
-        <a href="tel:+5595991333368" class="btn-outline-white">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          Ligar: (95) 99133-3368
-        </a>
-      </div>
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
 
-      <div class="cta-form">
-        <div class="form-group">
-          <label>Seu nome</label>
-          <input type="text" placeholder="Ex: João Silva" />
-        </div>
-        <div class="form-group">
-          <label>WhatsApp</label>
-          <input type="tel" placeholder="(95) 9 0000-0000" />
-        </div>
-        <div class="form-group">
-          <label>Cidade / Bairro</label>
-          <input type="text" placeholder="Ex: Boa Vista — Caranã" />
-        </div>
-        <button class="btn-form" onclick="sendFormWhatsapp()">Enviar →</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── FOOTER ─── -->
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="logo-badge" style="display:inline-block;margin-bottom:16px;">PROTEGE<span style="display:block;font-size:18px;font-weight:900;">PISO</span></div>
-        <p class="footer-desc">
-          Proteção profissional de pisos para obras e reformas em Boa Vista e municípios de Roraima. Franquia autorizada da Protege Piso Nacional — pioneira no segmento há mais de 18 anos.
-        </p>
-        <div class="footer-social">
-          <a href="https://instagram.com/protegepisoboavista" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
-            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          </a>
-          <a href="https://wa.me/5595991333368" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">
-            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.105.544 4.082 1.494 5.8L0 24l6.356-1.479A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.365l-.36-.213-3.71.863.879-3.601-.234-.375A9.818 9.818 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div>
-        <div class="footer-col-title">Navegação</div>
-        <ul class="footer-links">
-          <li><a href="#sobre">Sobre a empresa</a></li>
-          <li><a href="#como-funciona">Como funciona</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#diferenciais">Diferenciais</a></li>
-          <li><a href="#galeria">Galeria de fotos</a></li>
-          <li><a href="#depoimentos">Depoimentos</a></li>
-          <li><a href="#atendimento">Área de atendimento</a></li>
-          <li><a href="#faq">Perguntas frequentes</a></li>
-          <li><a href="#contato">Fale conosco</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <div class="footer-col-title">Contato</div>
-        <div class="footer-info">
-          <div class="info-item">
-            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            <a href="tel:+5595991333368" style="color:inherit;text-decoration:none;">(95) 99133-3368</a>
-          </div>
-          <div class="info-item">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-            Rua da Mangueira, 237<br/>Boa Vista – RR, 69307-570
-          </div>
-          <div class="info-item">
-            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-            Seg–Sex: 8h–18h<br/>Sáb: 8h–12h
-          </div>
-          <div class="info-item">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-            Raio de atendimento:<br/>até 200 km de Boa Vista
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>© 2025 Protege Piso Boa Vista. Todos os direitos reservados.</p>
-      <p class="footer-franquia">Franquia autorizada <a href="https://protegepiso.com.br" target="_blank" rel="noopener">Protege Piso Nacional</a></p>
-    </div>
-  </footer>
-
-  <!-- ─── FLOATING WHATSAPP ─── -->
-  <a href="https://wa.me/5595991333368?text=Olá!%20Gostaria%20de%20um%20orçamento%20de%20proteção%20de%20piso%20para%20minha%20obra%20em%20Boa%20Vista." target="_blank" rel="noopener" class="wpp-float" aria-label="Fale conosco pelo WhatsApp">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.105.544 4.082 1.494 5.8L0 24l6.356-1.479A11.948 11.948 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.365l-.36-.213-3.71.863.879-3.601-.234-.375A9.818 9.818 0 012.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/></svg>
-  </a>
-
-  <!-- ─── JS ─── -->
-  <script>
-    // Mobile menu toggle
-    function toggleMenu() {
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('open');
-    }
-
-    // Close mobile menu on outside click
-    document.addEventListener('click', (e) => {
-      const menu = document.getElementById('mobileMenu');
-      const hamburger = document.getElementById('hamburger');
-      if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
-        menu.classList.remove('open');
-      }
-    });
-
-    // FAQ accordion
-    function toggleFaq(btn) {
-      const item = btn.parentElement;
-      const answer = item.querySelector('.faq-a');
-      const allBtns = document.querySelectorAll('.faq-q');
-      const allAnswers = document.querySelectorAll('.faq-a');
-
-      allBtns.forEach(b => { if (b !== btn) b.classList.remove('active'); });
-      allAnswers.forEach(a => { if (a !== answer) a.classList.remove('open'); });
-
-      btn.classList.toggle('active');
-      answer.classList.toggle('open');
-    }
-
-    // Form → WhatsApp
-    function sendFormWhatsapp() {
-      const nome = document.querySelector('.cta-form input[type=text]').value.trim();
-      const tel = document.querySelector('.cta-form input[type=tel]').value.trim();
-      const cidade = document.querySelectorAll('.cta-form input[type=text]')[1]?.value.trim() || '';
-      if (!nome && !tel) {
-        alert('Por favor, preencha pelo menos seu nome e WhatsApp.');
-        return;
-      }
-      const msg = encodeURIComponent(`Olá! Sou ${nome || 'cliente'} e gostaria de um orçamento de proteção de piso.\nTelefone: ${tel || 'não informado'}\nCidade/Bairro: ${cidade || 'não informado'}`);
-      window.open(`https://wa.me/5595991333368?text=${msg}`, '_blank');
-    }
-
-    // Scroll spy: header shadow
-    window.addEventListener('scroll', () => {
-      const header = document.querySelector('header');
-      header.style.boxShadow = window.scrollY > 20
-        ? '0 2px 24px rgba(0,0,0,0.13)'
-        : '0 2px 16px rgba(0,0,0,0.08)';
-    });
-
-    // ─── SPLASH INTRO LOGIC ───
-    (function() {
-      const splash      = document.getElementById('splash');
-      const panelLeft   = document.getElementById('panelLeft');
-      const panelRight  = document.getElementById('panelRight');
-      const body        = document.body;
-
-      // Prevent scroll while splash is visible
-      body.style.overflow = 'hidden';
-
-      // Phase 1 (t=2.4s): fade out the splash overlay
-      // Phase 2 (t=2.8s): panels split open, revealing page
-      // Phase 3 (t=3.5s): remove panels from DOM
-
-      setTimeout(() => {
-        splash.classList.add('hidden');
-      }, 2400);
-
-      setTimeout(() => {
-        panelLeft.classList.add('open');
-        panelRight.classList.add('open');
-        body.style.overflow = '';
-      }, 2800);
-
-      setTimeout(() => {
-        panelLeft.remove();
-        panelRight.remove();
-        splash.remove();
-      }, 3600);
-    })();
-  </script>
-
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 90;
+                    window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - offset, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
