@@ -3,441 +3,442 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="theme-color" content="#4a2c20">
+    <meta name="theme-color" content="#2a1b18">
     <meta name="description" content="Doceria Trem Bão - Bolos personalizados e doces finos em Corumbá-MS">
-    <title>Trem Bão - Doceria Premium | Corumbá-MS</title>
+    <title>Trem Bão | Doceria Premium</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        
         :root {
-            --bg-gradient: linear-gradient(135deg, #fce4ec 0%, #e8d4c4 50%, #f5e1d5 100%);
-            --glass-bg: rgba(255, 255, 255, 0.45);
-            --glass-border: rgba(255, 255, 255, 0.65);
-            --text-main: #3e2723;
-            --text-muted: #6d4c41;
-            --gold: #9c6644;
-            --gold-light: #d4a574;
-            --accent-dark: #4a2c20;
-            --touch-min: 44px;
+            --bg-primary: #0f0806;
+            --bg-gradient: linear-gradient(135deg, #1a0f0d 0%, #2a1b18 50%, #1f120f 100%);
+            --accent-gold: #d4a574;
+            --accent-rose: #e8b4b8;
+            --accent-warm: #c98c6c;
+            --glass-bg: rgba(255, 255, 255, 0.04);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --text-primary: #f5f0eb;
+            --text-secondary: #b8a89d;
+            --text-muted: #8a7a70;
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 28px;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --touch-min: 48px;
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
         html { scroll-behavior: smooth; font-size: 16px; }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: var(--bg-gradient);
-            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
             overflow-x: hidden;
             line-height: 1.6;
             min-height: 100vh;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* ===== INTRO ===== */
-        .intro-overlay {
+        /* ===== ANIMATED BACKGROUND ===== */
+        .bg-orbs {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 9999;
-            background: linear-gradient(135deg, #fce4ec 0%, #f5e1d5 50%, #e8d4c4 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 0.6s ease, transform 0.6s ease;
-            padding: 1rem;
-        }
-
-        .intro-overlay.fade-out {
-            opacity: 0; transform: scale(1.1); pointer-events: none;
-        }
-
-        .intro-video-container {
-            width: 100%; max-width: 400px;
-            animation: introBounce 0.6s ease;
-        }
-
-        .intro-video-container video {
-            width: 100%; height: auto;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(62,39,35,0.2);
-        }
-
-        @keyframes introBounce {
-            0% { transform: scale(0.3); opacity: 0; }
-            60% { transform: scale(1.05); }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-        .intro-progress-bar {
-            width: 200px; max-width: 70vw;
-            height: 4px;
-            background: rgba(62,39,35,0.1);
-            border-radius: 2px;
-            margin-top: 1.5rem;
+            inset: 0;
+            z-index: -1;
             overflow: hidden;
+            pointer-events: none;
         }
 
-        .intro-progress-fill {
-            width: 0%; height: 100%;
-            background: linear-gradient(90deg, var(--gold), var(--gold-light));
-            border-radius: 2px;
-            animation: progressFill 5s ease forwards;
-        }
-
-        @keyframes progressFill {
-            0% { width: 0%; } 100% { width: 100%; }
-        }
-
-        .intro-text {
-            margin-top: 1rem;
-            font-family: 'Playfair Display', serif;
-            font-size: 1rem;
-            color: var(--text-muted);
-            text-align: center;
-        }
-
-        .intro-skip {
+        .orb {
             position: absolute;
-            bottom: 20px; right: 20px;
-            background: rgba(255,255,255,0.9);
-            border: 1px solid rgba(255,255,255,0.6);
-            color: var(--text-main);
-            padding: 0.6rem 1.2rem;
-            border-radius: 50px;
-            cursor: pointer;
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.85rem;
-            min-height: var(--touch-min);
-            display: flex; align-items: center; gap: 0.5rem;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: floatOrb 20s ease-in-out infinite;
         }
 
-        .intro-skip:active { transform: scale(0.95); }
+        .orb-1 { width: 60vmax; height: 60vmax; background: radial-gradient(circle, var(--accent-rose), transparent 70%); top: -20%; left: -20%; animation-delay: 0s; }
+        .orb-2 { width: 50vmax; height: 50vmax; background: radial-gradient(circle, var(--accent-warm), transparent 70%); bottom: -15%; right: -15%; animation-delay: -5s; }
+        .orb-3 { width: 40vmax; height: 40vmax; background: radial-gradient(circle, var(--accent-gold), transparent 70%); top: 40%; left: 30%; animation-delay: -10s; opacity: 0.25; }
+
+        @keyframes floatOrb {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -40px) scale(1.05); }
+            66% { transform: translate(-20px, 25px) scale(0.95); }
+        }
+
+        /* ===== SCROLL PROGRESS ===== */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-rose), var(--accent-gold), var(--accent-warm));
+            z-index: 10000;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
 
         /* ===== HEADER ===== */
         header {
             position: fixed;
-            top: 0; left: 0; width: 100%;
-            z-index: 1000;
-            padding: 0.6rem 1rem;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255,255,255,0.4);
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-
-        header.visible { opacity: 1; transform: translateY(0); }
-
-        nav {
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 32px);
             max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            z-index: 1000;
+            padding: 0.75rem 1.5rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--glass-shadow);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateX(-50%) translateY(-20px);
         }
+
+        header.visible { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+        nav { display: flex; justify-content: space-between; align-items: center; }
 
         .logo img {
-            height: 45px;
+            height: 48px;
             width: auto;
-            filter: drop-shadow(0 2px 6px rgba(62,39,35,0.15));
+            filter: drop-shadow(0 4px 12px rgba(212,165,116,0.2));
+            transition: var(--transition);
         }
+
+        .nav-links {
+            display: none;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover { color: var(--accent-gold); }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+            background: var(--accent-gold); transition: var(--transition);
+        }
+        .nav-links a:hover::after { width: 100%; }
 
         .mobile-menu {
             width: var(--touch-min);
             height: var(--touch-min);
             display: flex; align-items: center; justify-content: center;
-            color: var(--accent-dark);
+            color: var(--text-primary);
             font-size: 1.4rem;
             cursor: pointer;
             border-radius: 50%;
+            transition: var(--transition);
         }
 
-        .nav-links {
-            display: none;
-            position: absolute;
-            top: 100%; left: 0; right: 0;
-            background: rgba(255,255,255,0.98);
-            flex-direction: column;
-            padding: 0.5rem;
-            gap: 0.25rem;
-            box-shadow: 0 8px 25px rgba(62,39,35,0.12);
-            border-radius: 0 0 15px 15px;
-        }
+        .mobile-menu:hover { background: rgba(255,255,255,0.05); }
 
-        .nav-links.active { display: flex; }
-
-        .nav-links a {
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            padding: 0.875rem 1rem;
-            border-radius: 10px;
-            min-height: var(--touch-min);
-            display: flex; align-items: center;
-        }
-
-        .nav-links a:active { background: rgba(156,102,68,0.1); }
-
-        /* ===== HERO - SEM ESPAÇO BRANCO ===== */
+        /* ===== HERO ===== */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 70px 1.25rem 2rem;
+            padding: 120px 1.5rem 2rem;
             position: relative;
-            overflow: hidden;
         }
 
         .hero-container {
-            max-width: 1100px;
+            max-width: 1200px;
             width: 100%;
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
             align-items: center;
-            gap: 0; /* Removido o gap excessivo */
             z-index: 2;
         }
 
-        .hero-content {
-            width: 100%;
-            text-align: center;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+        .hero-content { text-align: center; }
 
-        .hero-logo {
-            margin-bottom: 0.75rem;
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(232,180,184,0.1);
+            border: 1px solid rgba(232,180,184,0.2);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--accent-rose);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease;
         }
 
         .hero-logo img {
-            max-width: 100%;
-            max-height: 100px;
+            max-width: 180px;
             height: auto;
-            width: auto;
-            filter: drop-shadow(0 3px 8px rgba(62,39,35,0.12));
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 8px 24px rgba(212,165,116,0.15));
         }
 
         .hero-title {
-            font-size: 1.85rem;
-            line-height: 1.15;
-            margin-bottom: 0.75rem;
-            color: var(--accent-dark);
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            line-height: 1.1;
+            margin-bottom: 1.25rem;
+            background: linear-gradient(135deg, #fff 30%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-
-        .hero-title span { color: var(--gold); font-style: italic; }
 
         .hero-desc {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            line-height: 1.5;
-            max-width: 500px;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .hero-buttons {
+        .hero-actions {
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
-            width: 100%;
-            max-width: 280px;
+            gap: 1rem;
+            align-items: center;
         }
 
         .btn {
-            padding: 0.9rem 1.5rem;
+            padding: 1rem 2.25rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 1rem;
             min-height: var(--touch-min);
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
             border: none;
             cursor: pointer;
             width: 100%;
-            transition: all 0.3s;
+            max-width: 260px;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.2), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .btn:hover::before { opacity: 1; }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-warm));
+            color: #0f0806;
+            box-shadow: 0 10px 30px rgba(212,165,116,0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.04);
+            color: var(--text-primary);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
         }
 
         .btn:active { transform: scale(0.97); }
 
-        .btn-primary {
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            color: #fff;
-            box-shadow: 0 4px 12px rgba(156,102,68,0.3);
+        .hero-video-wrapper {
+            position: relative;
+            border-radius: var(--radius-lg);
+            padding: 12px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+            transform: perspective(1000px) rotateY(-6deg) rotateX(4deg);
+            transition: var(--transition);
         }
 
-        .btn-secondary {
-            background: rgba(255,255,255,0.6);
-            color: var(--accent-dark);
-            border: 2px solid rgba(62,39,35,0.15);
-        }
+        .hero-video-wrapper:hover { transform: perspective(1000px) rotateY(0deg) rotateX(0deg); }
 
-        .video-wrapper {
-            width: 100%;
-            max-width: 320px;
-            margin-top: 2rem;
-            border-radius: 20px;
-            padding: 8px;
-            background: rgba(255,255,255,0.4);
-            border: 1px solid rgba(255,255,255,0.5);
-            box-shadow: 0 15px 35px rgba(62,39,35,0.12);
-        }
-
-        .brigadeiro-video {
+        .hero-video {
             width: 100%;
             display: block;
-            border-radius: 16px;
+            border-radius: var(--radius-md);
+            aspect-ratio: 16/10;
+            object-fit: cover;
         }
 
-        /* ===== SEÇÕES ===== */
-        section { padding: 3.5rem 1.25rem; }
+        /* ===== SECTIONS ===== */
+        section { padding: 5rem 1.5rem; position: relative; z-index: 2; }
         .container { max-width: 1100px; margin: 0 auto; width: 100%; }
-        .section-header { text-align: center; margin-bottom: 2.5rem; }
+        .section-header { text-align: center; margin-bottom: 3.5rem; }
 
         h2 {
-            font-size: 1.75rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(90deg, var(--accent-dark), var(--gold));
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            margin-bottom: 0.75rem;
+            background: linear-gradient(90deg, #fff, var(--accent-gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            line-height: 1.3;
         }
 
         .section-subtitle {
             display: block;
-            color: var(--gold);
-            font-size: 0.75rem;
+            color: var(--accent-rose);
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 2.5px;
             margin-bottom: 0.5rem;
             font-weight: 600;
         }
 
-        .about { background: rgba(255,255,255,0.3); }
+        /* ===== CARDS & GLASS ===== */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: 1.75rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent 60%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .glass-card:hover { transform: translateY(-6px); border-color: rgba(212,165,116,0.3); }
+        .glass-card:hover::before { opacity: 1; }
+
         .about-content {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
             align-items: center;
         }
 
-        .about-text { text-align: center; }
-        .about-text p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 1.25rem;
-            line-height: 1.6;
-        }
+        .about-text p { color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1rem; }
 
         .feature-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 0.75rem;
-            margin-top: 1.25rem;
+            gap: 1rem;
+            margin-top: 1.5rem;
         }
 
-        .feature-card {
-            padding: 1rem 0.75rem;
-            border-radius: 12px;
-            background: rgba(255,255,255,0.6);
-            border: 1px solid rgba(255,255,255,0.7);
+        .feature-item {
+            padding: 1.25rem;
+            border-radius: var(--radius-sm);
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--glass-border);
             text-align: center;
+            transition: var(--transition);
         }
 
-        .feature-card i { font-size: 1.5rem; color: var(--gold); margin-bottom: 0.5rem; display: block; }
-        .feature-card h4 { font-size: 0.9rem; color: var(--accent-dark); margin-bottom: 0.25rem; }
-        .feature-card p { font-size: 0.75rem; color: var(--text-muted); margin: 0; }
+        .feature-item:hover { border-color: var(--accent-gold); background: rgba(212,165,116,0.08); }
+        .feature-item i { font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 0.5rem; display: block; }
+        .feature-item h4 { font-size: 0.95rem; margin-bottom: 0.25rem; color: var(--text-primary); }
+        .feature-item p { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
 
-        .about-image-frame {
+        .about-img {
             width: 100%;
-            max-width: 350px;
-            border-radius: 16px;
+            max-width: 380px;
+            border-radius: var(--radius-md);
             overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.6);
-            box-shadow: 0 10px 25px rgba(62,39,35,0.1);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
         }
 
-        .about-image-frame img { width: 100%; height: auto; display: block; }
+        .about-img img { width: 100%; height: auto; display: block; transition: transform 0.6s ease; }
+        .about-img:hover img { transform: scale(1.05); }
 
-        .gallery { background: transparent; }
+        /* ===== GALLERY ===== */
         .gallery-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1rem;
+            gap: 1.25rem;
         }
 
         .gallery-item {
             position: relative;
-            border-radius: 16px;
+            border-radius: var(--radius-md);
             overflow: hidden;
             aspect-ratio: 4/5;
-            border: 1px solid rgba(255,255,255,0.6);
-            box-shadow: 0 8px 20px rgba(62,39,35,0.08);
+            cursor: pointer;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: var(--transition);
         }
 
-        .gallery-item img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-        }
+        .gallery-item:hover { transform: translateY(-8px) scale(1.02); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .gallery-item:hover img { transform: scale(1.1); }
 
         .gallery-overlay {
             position: absolute;
-            bottom: 0; left: 0; right: 0;
-            padding: 1.5rem 1.25rem 1.25rem;
-            background: linear-gradient(to top, rgba(62,39,35,0.95), transparent);
+            inset: 0;
+            background: linear-gradient(to top, rgba(15,8,6,0.9) 0%, transparent 60%);
+            padding: 2rem 1.5rem 1.5rem;
+            opacity: 0;
+            transition: var(--transition);
         }
 
-        .gallery-overlay h3 { font-size: 1.1rem; color: #fff; margin-bottom: 0.25rem; }
-        .gallery-overlay p { color: var(--gold-light); font-size: 0.8rem; }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-overlay h3 { font-size: 1.3rem; color: #fff; margin-bottom: 0.3rem; }
+        .gallery-overlay p { color: var(--accent-gold); font-size: 0.9rem; }
 
-        .contact { background: rgba(255,255,255,0.3); text-align: center; }
+        /* ===== CONTACT ===== */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1rem;
-            max-width: 400px;
+            gap: 1.25rem;
+            max-width: 500px;
             margin: 0 auto;
         }
 
-        .contact-card {
-            padding: 1.5rem 1.25rem;
-            border-radius: 16px;
-            background: rgba(255,255,255,0.6);
-            border: 1px solid rgba(255,255,255,0.7);
-        }
-
+        .contact-card { text-align: center; }
         .contact-icon {
-            width: 50px; height: 50px;
-            background: rgba(156,102,68,0.1);
+            width: 60px; height: 60px;
+            background: rgba(212,165,116,0.1);
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 0.75rem;
-            color: var(--gold);
-            font-size: 1.25rem;
+            margin: 0 auto 1rem;
+            color: var(--accent-gold);
+            font-size: 1.4rem;
+            border: 1px solid rgba(212,165,116,0.2);
         }
 
-        .contact-card h3 { font-size: 1.1rem; color: var(--accent-dark); margin-bottom: 0.25rem; }
-        .contact-card p { color: var(--text-muted); font-size: 0.85rem; }
-        .contact-card a {
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            display: inline-block;
-            margin-top: 0.5rem;
-        }
+        .contact-card h3 { font-size: 1.2rem; margin-bottom: 0.3rem; color: var(--text-primary); }
+        .contact-card p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
+        .contact-card a { color: var(--accent-gold); text-decoration: none; font-weight: 600; transition: var(--transition); }
+        .contact-card a:hover { color: #fff; text-shadow: 0 0 12px rgba(212,165,116,0.5); }
 
         .whatsapp-btn {
             display: inline-flex;
@@ -445,134 +446,103 @@
             gap: 0.5rem;
             background: #25D366;
             color: white !important;
-            padding: 0.7rem 1.25rem;
+            padding: 0.75rem 1.5rem;
             border-radius: 50px;
             font-size: 0.95rem;
         }
 
+        /* ===== FOOTER ===== */
         footer {
-            background: var(--accent-dark);
-            padding: 2.5rem 1.5rem 1.5rem;
+            padding: 3rem 1.5rem 2rem;
             text-align: center;
+            border-top: 1px solid var(--glass-border);
+            position: relative;
+            z-index: 2;
         }
 
-        .social-links { display: flex; justify-content: center; gap: 1.25rem; margin-bottom: 1.25rem; }
+        .social-links { display: flex; justify-content: center; gap: 1.25rem; margin-bottom: 1.5rem; }
 
         .social-links a {
-            width: 45px; height: 45px;
+            width: 50px; height: 50px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.1);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
             display: flex; align-items: center; justify-content: center;
-            color: var(--gold-light);
+            color: var(--text-secondary);
             font-size: 1.2rem;
-            border: 1px solid rgba(255,255,255,0.2);
+            transition: var(--transition);
         }
 
-        footer p { color: rgba(255,255,255,0.7); font-size: 0.8rem; }
+        .social-links a:hover { background: var(--accent-gold); color: #0f0806; transform: translateY(-4px) scale(1.05); }
+        footer p { color: var(--text-muted); font-size: 0.85rem; }
 
-        /* ===== ANIMAÇÕES ===== */
+        /* ===== ANIMATIONS ===== */
         .reveal {
             opacity: 0;
-            transform: translateY(25px);
-            transition: all 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        
-        .text-reveal { overflow: hidden; display: inline-block; }
-        .text-reveal span {
-            display: inline-block;
-            transform: translateY(100%);
-            transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .active .text-reveal span { transform: translateY(0); }
 
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-
-        /* ===== TABLET ===== */
+        /* ===== RESPONSIVE ===== */
         @media (min-width: 600px) {
             .gallery-grid { grid-template-columns: repeat(2, 1fr); }
             .contact-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (min-width: 768px) {
-            html { font-size: 17px; }
-            header { padding: 0.75rem 2rem; }
-            .logo img { height: 55px; }
+            header { padding: 0.9rem 2rem; }
+            .logo img { height: 58px; }
+            .nav-links { display: flex; }
+            .mobile-menu { display: none; }
             
-            .hero { padding: 100px 2rem 2rem; }
-            .hero-container {
-                flex-direction: row;
-                gap: 3rem;
-                justify-content: center;
-            }
-            .hero-content {
-                text-align: left;
-                align-items: flex-start;
-            }
-            .hero-logo { justify-content: flex-start; }
-            .hero-logo img { max-height: 130px; }
-            .hero-title { font-size: 2.75rem; }
-            .hero-desc { font-size: 1rem; }
-            .hero-buttons {
-                flex-direction: row;
-                max-width: none;
-                justify-content: flex-start;
-            }
+            .hero { padding: 140px 2rem 2rem; }
+            .hero-container { grid-template-columns: 1.1fr 0.9fr; gap: 4rem; }
+            .hero-content { text-align: left; }
+            .hero-actions { flex-direction: row; max-width: none; }
             .btn { width: auto; }
-            .video-wrapper { max-width: 380px; margin-top: 0; }
+            .hero-video-wrapper { transform: perspective(1000px) rotateY(-8deg) rotateX(4deg); }
             
-            .about-content { flex-direction: row; text-align: left; }
+            .about-content { grid-template-columns: 1.2fr 0.8fr; }
             .about-text { text-align: left; }
-            .about-image-frame { max-width: 380px; }
+            .about-img { max-width: 100%; }
             
-            .contact-grid { grid-template-columns: repeat(3, 1fr); max-width: 800px; }
+            .contact-grid { grid-template-columns: repeat(3, 1fr); max-width: 900px; }
             .gallery-grid { grid-template-columns: repeat(3, 1fr); }
             
-            h2 { font-size: 2.5rem; }
-            section { padding: 5rem 2rem; }
-            
-            .nav-links {
-                display: flex;
-                position: static;
-                flex-direction: row;
-                background: transparent;
-                box-shadow: none;
-                border-radius: 0;
-                padding: 0;
-                gap: 1.5rem;
-            }
-            .nav-links a { padding: 0.5rem; min-height: auto; }
-            .mobile-menu { display: none; }
+            section { padding: 6rem 2rem; }
+            h2 { font-size: 2.8rem; }
         }
 
-        @media (min-width: 1024px) {
-            html { font-size: 18px; }
-            .hero-title { font-size: 3.25rem; }
-            .hero-logo img { max-height: 150px; }
-            .video-wrapper { max-width: 420px; }
-            h2 { font-size: 3rem; }
-            section { padding: 6rem 2rem; }
+        /* ===== ACCESSIBILITY & PERF ===== */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+            .orb { animation: none; }
+        }
+
+        @media (hover: none) {
+            .hero-video-wrapper { transform: none !important; }
+            .glass-card:hover, .gallery-item:hover, .btn:hover { transform: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- INTRO -->
-    <div class="intro-overlay" id="introOverlay">
-        <div class="intro-video-container">
-            <video id="introVideo" autoplay muted playsinline>
-                <source src="intro-trem-bao.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="intro-progress-bar"><div class="intro-progress-fill"></div></div>
-        <p class="intro-text">Bem-vindo à Doceria Trem Bão</p>
-        <button class="intro-skip" id="skipBtn"><i class="fas fa-forward"></i> Pular</button>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
     </div>
 
     <!-- HEADER -->
-    <header class="glass" id="mainHeader">
+    <header id="mainHeader">
         <nav>
             <a href="#" class="logo">
                 <img src="logo-trem-bao-trem.png" alt="Trem Bão">
@@ -591,25 +561,17 @@
     <section class="hero" id="home">
         <div class="hero-container">
             <div class="hero-content">
-                <div class="hero-logo reveal">
-                    <img src="logo-trem-bao-texto.png" alt="Trem Bão">
-                </div>
-                <h1 class="hero-title">
-                    <div class="text-reveal"><span style="transition-delay:0.1s">Delícias que</span></div><br>
-                    <div class="text-reveal"><span style="transition-delay:0.2s">encantam a <span style="color:var(--gold)">alma</span></span></div>
-                </h1>
-                <p class="hero-desc reveal delay-2">Doceria artesanal premium em Corumbá-MS. Bolos personalizados e doces finos para momentos inesquecíveis.</p>
-                <div class="hero-buttons reveal delay-3">
-                    <a href="https://wa.me/5567984060550" class="btn btn-primary">
-                        <i class="fab fa-whatsapp"></i> Encomendar
-                    </a>
-                    <a href="https://instagram.com/trembao" class="btn btn-secondary">
-                        <i class="fab fa-instagram"></i> Instagram
-                    </a>
+                <div class="hero-badge"><i class="fas fa-star"></i> Artesanal & Premium</div>
+                <div class="hero-logo"><img src="logo-trem-bao-texto.png" alt="Trem Bão"></div>
+                <h1 class="hero-title reveal">Delícias que encantam a <span style="color:var(--accent-gold); font-style:italic;">alma</span></h1>
+                <p class="hero-desc reveal" style="transition-delay:0.1s">Doceria premium em Corumbá-MS. Bolos personalizados, doces finos e aquele toque especial que transforma momentos.</p>
+                <div class="hero-actions reveal" style="transition-delay:0.2s">
+                    <a href="https://wa.me/5567984060550" class="btn btn-primary magnetic"><i class="fab fa-whatsapp"></i> Encomendar</a>
+                    <a href="https://instagram.com/trembao" class="btn btn-secondary magnetic"><i class="fab fa-instagram"></i> Instagram</a>
                 </div>
             </div>
-            <div class="video-wrapper reveal delay-2">
-                <video class="brigadeiro-video" autoplay loop muted playsinline>
+            <div class="hero-video-wrapper reveal" style="transition-delay:0.3s">
+                <video class="hero-video" autoplay loop muted playsinline poster="brigadeiro-poster.jpg">
                     <source src="brigadeiro-girando.mp4" type="video/mp4">
                 </video>
             </div>
@@ -621,28 +583,21 @@
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-subtitle">Nossa Essência</span>
-                <h2>Artesanato com <span style="color:var(--gold)">Alma</span></h2>
+                <h2>Artesanato com Alma</h2>
             </div>
             <div class="about-content">
-                <div class="about-text reveal delay-1">
-                    <p>Nascida na Rua Cáceres 946, a <strong style="color:var(--gold)">Doceria Trem Bão</strong> é o resultado da paixão por transformar ingredientes selecionados em memórias doces.</p>
+                <div class="about-text reveal">
+                    <p>Nascida na Rua Cáceres 946, a <strong style="color:var(--accent-gold)">Doceria Trem Bão</strong> nasceu da paixão por transformar ingredientes selecionados em memórias doces. Cada receita é um equilíbrio perfeito entre tradição e inovação.</p>
+                    <p>Não vendemos apenas doces; entregamos a felicidade de compartilhar momentos especiais.</p>
                     <div class="feature-grid">
-                        <div class="feature-card">
-                            <i class="fas fa-gem"></i><h4>Premium</h4><p>Alta qualidade</p>
-                        </div>
-                        <div class="feature-card">
-                            <i class="fas fa-hand-holding-heart"></i><h4>Artesanal</h4><p>Feito com carinho</p>
-                        </div>
-                        <div class="feature-card">
-                            <i class="fas fa-paint-brush"></i><h4>Personalizado</h4><p>Do seu jeitinho</p>
-                        </div>
-                        <div class="feature-card">
-                            <i class="fas fa-truck-fast"></i><h4>Entrega</h4><p>Corumbá e região</p>
-                        </div>
+                        <div class="feature-item"><i class="fas fa-gem"></i><h4>Premium</h4><p>Ingredientes selecionados</p></div>
+                        <div class="feature-item"><i class="fas fa-hand-sparkles"></i><h4>Artesanal</h4><p>Feito à mão com carinho</p></div>
+                        <div class="feature-item"><i class="fas fa-wand-magic-sparkles"></i><h4>Personalizado</h4><p>Do seu jeitinho</p></div>
+                        <div class="feature-item"><i class="fas fa-truck-fast"></i><h4>Entrega</h4><p>Corumbá e região</p></div>
                     </div>
                 </div>
-                <div class="about-image-frame glass reveal delay-2">
-                    <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476d?w=800&q=80" alt="Doces" loading="lazy">
+                <div class="about-img reveal" style="transition-delay:0.2s">
+                    <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476d?w=800&q=80" alt="Preparando doces" loading="lazy">
                 </div>
             </div>
         </div>
@@ -653,21 +608,12 @@
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-subtitle">Nossas Criações</span>
-                <h2>Menu de <span style="color:var(--gold)">Sabores</span></h2>
+                <h2>Menu de Sabores</h2>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item reveal delay-1">
-                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80" alt="Chocolate" loading="lazy">
-                    <div class="gallery-overlay"><h3>Chocolate Noir</h3><p>Ganache belga</p></div>
-                </div>
-                <div class="gallery-item reveal delay-2">
-                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80" alt="Morango" loading="lazy">
-                    <div class="gallery-overlay"><h3>Red Velvet</h3><p>Toque de avelã</p></div>
-                </div>
-                <div class="gallery-item reveal delay-3">
-                    <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=80" alt="Brigadeiros" loading="lazy">
-                    <div class="gallery-overlay"><h3>Brigadeiros Gold</h3><p>Edição limitada</p></div>
-                </div>
+                <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80" alt="Chocolate" loading="lazy"><div class="gallery-overlay"><h3>Chocolate Noir</h3><p>Ganache belga & cacau 70%</p></div></div>
+                <div class="gallery-item reveal" style="transition-delay:0.1s"><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80" alt="Morango" loading="lazy"><div class="gallery-overlay"><h3>Red Velvet</h3><p>Clássico com toque de avelã</p></div></div>
+                <div class="gallery-item reveal" style="transition-delay:0.2s"><img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=80" alt="Brigadeiros" loading="lazy"><div class="gallery-overlay"><h3>Brigadeiros Gold</h3><p>Edição limitada premium</p></div></div>
             </div>
         </div>
     </section>
@@ -677,80 +623,80 @@
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-subtitle">Fale Conosco</span>
-                <h2>Faça seu <span style="color:var(--gold)">Pedido</span></h2>
+                <h2>Faça seu Pedido</h2>
             </div>
             <div class="contact-grid">
-                <div class="contact-card reveal delay-1">
-                    <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
-                    <h3>WhatsApp</h3>
-                    <a href="https://wa.me/5567984060550" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> (67) 98406-0550</a>
-                </div>
-                <div class="contact-card reveal delay-2">
-                    <div class="contact-icon"><i class="fab fa-instagram"></i></div>
-                    <h3>Instagram</h3>
-                    <a href="https://instagram.com/trembao">@trembao</a>
-                </div>
-                <div class="contact-card reveal delay-3">
-                    <div class="contact-icon"><i class="fas fa-map-pin"></i></div>
-                    <h3>Endereço</h3>
-                    <p>Rua Cáceres, 946<br>Corumbá - MS</p>
-                </div>
+                <div class="glass-card contact-card reveal"><div class="contact-icon"><i class="fab fa-whatsapp"></i></div><h3>WhatsApp</h3><p>Clique para conversar</p><a href="https://wa.me/5567984060550" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> (67) 98406-0550</a></div>
+                <div class="glass-card contact-card reveal" style="transition-delay:0.1s"><div class="contact-icon"><i class="fab fa-instagram"></i></div><h3>Instagram</h3><p>Siga e fique por dentro</p><a href="https://instagram.com/trembao">@trembao</a></div>
+                <div class="glass-card contact-card reveal" style="transition-delay:0.2s"><div class="contact-icon"><i class="fas fa-map-pin"></i></div><h3>Endereço</h3><p>Rua Cáceres, 946<br>Corumbá - MS</p></div>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="social-links">
-            <a href="https://instagram.com/trembao"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/5567984060550"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com/trembao" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5567984060550" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://facebook.com" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
         </div>
         <p>&copy; 2026 Doceria Trem Bão. Todos os direitos reservados.</p>
     </footer>
 
     <script>
-        const introOverlay = document.getElementById('introOverlay');
-        const introVideo = document.getElementById('introVideo');
-        const skipBtn = document.getElementById('skipBtn');
-        const mainHeader = document.getElementById('mainHeader');
-        
-        function closeIntro() {
-            introOverlay.classList.add('fade-out');
-            mainHeader.classList.add('visible');
-            setTimeout(() => {
-                introOverlay.style.display = 'none';
-                initScrollAnimations();
-            }, 600);
-        }
-        
-        introVideo.addEventListener('ended', closeIntro);
-        setTimeout(closeIntro, 5000);
-        skipBtn.addEventListener('click', closeIntro);
-        
-        function initScrollAnimations() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) entry.target.classList.add('active');
-                });
-            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        }
-
-        const mobileMenu = document.getElementById('mobileMenu');
-        const navLinks = document.getElementById('navLinks');
-        mobileMenu.addEventListener('click', () => navLinks.classList.toggle('active'));
-        
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => navLinks.classList.remove('active'));
+        // Scroll Progress
+        const progress = document.getElementById('scrollProgress');
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            progress.style.width = `${(scrollTop / scrollHeight) * 100}%`;
         });
 
+        // Header visibility
+        const header = document.getElementById('mainHeader');
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            header.classList.toggle('visible', currentScroll > 50);
+            lastScroll = currentScroll;
+        });
+
+        // Mobile Menu
+        const menuBtn = document.getElementById('mobileMenu');
+        const nav = document.getElementById('navLinks');
+        menuBtn.addEventListener('click', () => nav.classList.toggle('active'));
+        nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('active')));
+
+        // Magnetic Buttons
+        document.querySelectorAll('.magnetic').forEach(btn => {
+            btn.addEventListener('mousemove', e => {
+                const rect = btn.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                btn.style.setProperty('--x', `${x}%`);
+                btn.style.setProperty('--y', `${y}%`);
+            });
+        });
+
+        // Scroll Reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const offset = 70;
-                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                    window.scrollTo({ top, behavior: 'smooth' });
+                    const offset = 90;
+                    window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - offset, behavior: 'smooth' });
                 }
             });
         });
