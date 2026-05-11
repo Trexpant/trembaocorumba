@@ -2,7 +2,9 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#4a2c20">
+    <meta name="description" content="Doceria Trem Bão - Bolos personalizados e doces finos em Corumbá-MS">
     <title>Trem Bão - Doceria Premium | Corumbá-MS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,503 +12,573 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         
         :root {
             --bg-gradient: linear-gradient(135deg, #fce4ec 0%, #e8d4c4 50%, #f5e1d5 100%);
             --glass-bg: rgba(255, 255, 255, 0.45);
             --glass-border: rgba(255, 255, 255, 0.65);
-            --glass-blur: 18px;
-            --glass-shadow: 0 8px 32px rgba(62, 39, 35, 0.08);
             --text-main: #3e2723;
             --text-muted: #6d4c41;
-            --text-light: #8d6e63;
             --gold: #9c6644;
             --gold-light: #d4a574;
             --accent-dark: #4a2c20;
+            --touch-min: 44px;
         }
 
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; font-size: 16px; }
 
         body {
             font-family: 'Poppins', sans-serif;
             background: var(--bg-gradient);
-            background-attachment: fixed;
             color: var(--text-main);
             overflow-x: hidden;
             line-height: 1.6;
             min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* ===== TELA DE INTRO ===== */
+        /* ===== INTRO ===== */
         .intro-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             z-index: 9999;
             background: linear-gradient(135deg, #fce4ec 0%, #f5e1d5 50%, #e8d4c4 100%);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            padding: 1rem;
         }
 
         .intro-overlay.fade-out {
-            opacity: 0;
-            transform: scale(1.1);
-            pointer-events: none;
+            opacity: 0; transform: scale(1.1); pointer-events: none;
         }
 
         .intro-video-container {
-            position: relative;
-            width: 500px;
-            max-width: 80vw;
+            width: 100%; max-width: 400px;
             animation: introBounce 0.6s ease;
         }
 
         .intro-video-container video {
-            width: 100%;
-            height: auto;
-            border-radius: 20px;
+            width: 100%; height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(62,39,35,0.2);
         }
 
         @keyframes introBounce {
-            0% { transform: scale(0.3) rotate(-10deg); opacity: 0; }
-            60% { transform: scale(1.1) rotate(2deg); }
-            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+            0% { transform: scale(0.3); opacity: 0; }
+            60% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
         }
 
         .intro-progress-bar {
-            width: 300px;
-            max-width: 80vw;
+            width: 200px; max-width: 70vw;
             height: 4px;
             background: rgba(62,39,35,0.1);
             border-radius: 2px;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             overflow: hidden;
         }
 
         .intro-progress-fill {
-            width: 0%;
-            height: 100%;
+            width: 0%; height: 100%;
             background: linear-gradient(90deg, var(--gold), var(--gold-light));
             border-radius: 2px;
             animation: progressFill 5s ease forwards;
         }
 
         @keyframes progressFill {
-            0% { width: 0%; }
-            100% { width: 100%; }
+            0% { width: 0%; } 100% { width: 100%; }
         }
 
         .intro-text {
-            margin-top: 1.5rem;
+            margin-top: 1rem;
             font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: var(--text-muted);
-            opacity: 0;
-            animation: fadeInText 1s ease 0.5s forwards;
-        }
-
-        @keyframes fadeInText {
-            to { opacity: 1; }
+            text-align: center;
         }
 
         .intro-skip {
             position: absolute;
-            bottom: 40px;
-            right: 40px;
-            background: rgba(255,255,255,0.5);
-            backdrop-filter: blur(10px);
+            bottom: 20px; right: 20px;
+            background: rgba(255,255,255,0.9);
             border: 1px solid rgba(255,255,255,0.6);
             color: var(--text-main);
-            padding: 0.8rem 2rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 50px;
             cursor: pointer;
             font-family: 'Poppins', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s;
-            opacity: 0;
-            animation: fadeInText 1s ease 1s forwards;
+            font-size: 0.85rem;
+            min-height: var(--touch-min);
+            display: flex; align-items: center; gap: 0.5rem;
         }
 
-        .intro-skip:hover {
-            background: var(--gold);
-            color: white;
-            transform: scale(1.05);
-        }
+        .intro-skip:active { transform: scale(0.95); }
 
-        /* Decorações flutuantes na intro */
-        .intro-decorations {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
-        }
-
-        .intro-float {
-            position: absolute;
-            font-size: 2rem;
-            opacity: 0.15;
-            animation: floatDecor 4s ease-in-out infinite;
-        }
-
-        .intro-float:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
-        .intro-float:nth-child(2) { top: 20%; right: 15%; animation-delay: 0.5s; }
-        .intro-float:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 1s; }
-        .intro-float:nth-child(4) { bottom: 15%; right: 10%; animation-delay: 1.5s; }
-        .intro-float:nth-child(5) { top: 50%; left: 5%; animation-delay: 2s; }
-
-        @keyframes floatDecor {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(15deg); }
-        }
-
-        /* Header (escondido durante intro) */
+        /* ===== HEADER ===== */
         header {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+            top: 0; left: 0; width: 100%;
             z-index: 1000;
-            padding: 1rem 2rem;
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            padding: 0.6rem 1rem;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255,255,255,0.4);
             transition: all 0.3s ease;
             opacity: 0;
             transform: translateY(-20px);
         }
 
-        header.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        header.visible { opacity: 1; transform: translateY(0); }
 
         nav {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
         .logo img {
-            height: 90px;
+            height: 45px;
             width: auto;
-            object-fit: contain;
-            filter: drop-shadow(0 4px 12px rgba(62,39,35,0.15));
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            filter: drop-shadow(0 2px 6px rgba(62,39,35,0.15));
         }
 
-        .logo img:hover { transform: scale(1.05) rotate(-2deg); }
+        .mobile-menu {
+            width: var(--touch-min);
+            height: var(--touch-min);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--accent-dark);
+            font-size: 1.4rem;
+            cursor: pointer;
+            border-radius: 50%;
+        }
 
-        .nav-links { display: flex; gap: 3rem; list-style: none; }
+        .nav-links {
+            display: none;
+            position: absolute;
+            top: 100%; left: 0; right: 0;
+            background: rgba(255,255,255,0.98);
+            flex-direction: column;
+            padding: 0.5rem;
+            gap: 0.25rem;
+            box-shadow: 0 8px 25px rgba(62,39,35,0.12);
+            border-radius: 0 0 15px 15px;
+        }
+
+        .nav-links.active { display: flex; }
 
         .nav-links a {
             color: var(--text-main);
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: color 0.3s;
-            position: relative;
+            padding: 0.875rem 1rem;
+            border-radius: 10px;
+            min-height: var(--touch-min);
+            display: flex; align-items: center;
         }
 
-        .nav-links a:hover { color: var(--gold); }
-        .nav-links a::after {
-            content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px;
-            background: var(--gold); transition: width 0.3s;
-        }
-        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:active { background: rgba(156,102,68,0.1); }
 
-        .mobile-menu { display: none; color: var(--accent-dark); font-size: 1.8rem; cursor: pointer; }
-
+        /* ===== HERO - SEM ESPAÇO BRANCO ===== */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 140px 2rem 2rem;
+            padding: 70px 1.25rem 2rem;
             position: relative;
             overflow: hidden;
-            background: transparent;
-        }
-
-        .hero::before {
-            content: ''; position: absolute; top: -10%; right: -10%; width: 60vw; height: 60vw;
-            background: radial-gradient(circle, rgba(252,228,236,0.6) 0%, transparent 70%);
-            filter: blur(60px);
-            z-index: 0;
         }
 
         .hero-container {
-            max-width: 1400px;
+            max-width: 1100px;
             width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
+            display: flex;
+            flex-direction: column;
             align-items: center;
+            gap: 0; /* Removido o gap excessivo */
             z-index: 2;
         }
 
-        .hero-content { padding-right: 2rem; text-align: center; }
+        .hero-content {
+            width: 100%;
+            text-align: center;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
         .hero-logo {
-            margin-bottom: 2rem;
-            display: flex;
-            justify-content: center;
+            margin-bottom: 0.75rem;
         }
 
         .hero-logo img {
             max-width: 100%;
+            max-height: 100px;
             height: auto;
-            max-height: 180px;
             width: auto;
-            filter: drop-shadow(0 8px 20px rgba(62,39,35,0.2));
-            transition: transform 0.4s ease;
+            filter: drop-shadow(0 3px 8px rgba(62,39,35,0.12));
         }
 
-        .hero-logo img:hover { transform: scale(1.05); }
-
         .hero-title {
-            font-size: 4.5rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
+            font-size: 1.85rem;
+            line-height: 1.15;
+            margin-bottom: 0.75rem;
             color: var(--accent-dark);
         }
 
         .hero-title span { color: var(--gold); font-style: italic; }
 
         .hero-desc {
-            font-size: 1.2rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
-            margin-bottom: 3rem;
-            max-width: 90%;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+            max-width: 500px;
         }
 
-        .hero-buttons { display: flex; gap: 1.5rem; justify-content: center; }
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            width: 100%;
+            max-width: 280px;
+        }
 
         .btn {
-            padding: 1.2rem 3rem;
+            padding: 0.9rem 1.5rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.4s;
+            font-size: 0.95rem;
+            min-height: var(--touch-min);
             display: inline-flex;
             align-items: center;
-            gap: 0.8rem;
-            font-size: 1rem;
-            letter-spacing: 0.5px;
+            justify-content: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
         }
+
+        .btn:active { transform: scale(0.97); }
 
         .btn-primary {
             background: linear-gradient(135deg, var(--gold), var(--gold-light));
             color: #fff;
-            border: none;
-            box-shadow: 0 10px 30px rgba(156,102,68,0.3);
+            box-shadow: 0 4px 12px rgba(156,102,68,0.3);
         }
-
-        .btn-primary:hover { transform: translateY(-4px); box-shadow: 0 15px 40px rgba(156,102,68,0.4); }
 
         .btn-secondary {
-            background: transparent;
+            background: rgba(255,255,255,0.6);
             color: var(--accent-dark);
-            border: 2px solid rgba(62,39,35,0.2);
+            border: 2px solid rgba(62,39,35,0.15);
         }
-
-        .btn-secondary:hover { border-color: var(--gold); color: var(--gold); background: rgba(255,255,255,0.5); }
 
         .video-wrapper {
-            position: relative;
-            border-radius: 40px;
-            padding: 15px;
-            background: rgba(255,255,255,0.3);
-            backdrop-filter: blur(30px);
-            border: 1px solid rgba(255,255,255,0.6);
-            box-shadow: 0 40px 80px rgba(62,39,35,0.15);
-            transform: perspective(1200px) rotateY(-8deg) rotateX(4deg);
-            transition: transform 0.6s ease;
+            width: 100%;
+            max-width: 320px;
+            margin-top: 2rem;
+            border-radius: 20px;
+            padding: 8px;
+            background: rgba(255,255,255,0.4);
+            border: 1px solid rgba(255,255,255,0.5);
+            box-shadow: 0 15px 35px rgba(62,39,35,0.12);
         }
 
-        .video-wrapper:hover { transform: perspective(1200px) rotateY(0deg) rotateX(0deg); }
+        .brigadeiro-video {
+            width: 100%;
+            display: block;
+            border-radius: 16px;
+        }
 
-        .brigadeiro-video { width: 100%; display: block; border-radius: 30px; }
+        /* ===== SEÇÕES ===== */
+        section { padding: 3.5rem 1.25rem; }
+        .container { max-width: 1100px; margin: 0 auto; width: 100%; }
+        .section-header { text-align: center; margin-bottom: 2.5rem; }
 
-        section { padding: 10rem 2rem; position: relative; background: transparent; }
-        .container { max-width: 1300px; margin: 0 auto; }
-        .section-header { text-align: center; margin-bottom: 6rem; }
+        h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, var(--accent-dark), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.3;
+        }
+
+        .section-subtitle {
+            display: block;
+            color: var(--gold);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
 
         .about { background: rgba(255,255,255,0.3); }
-        .about-content { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 6rem; align-items: center; }
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+        }
 
-        .about-text p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2.5rem; }
+        .about-text { text-align: center; }
+        .about-text p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            line-height: 1.6;
+        }
 
-        .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-top: 1.25rem;
+        }
 
         .feature-card {
-            padding: 2rem;
-            border-radius: 20px;
-            background: rgba(255,255,255,0.5);
+            padding: 1rem 0.75rem;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.6);
             border: 1px solid rgba(255,255,255,0.7);
-            transition: all 0.3s;
+            text-align: center;
         }
 
-        .feature-card:hover { transform: translateY(-8px); border-color: var(--gold); background: rgba(255,255,255,0.7); box-shadow: 0 10px 25px rgba(62,39,35,0.1); }
-        .feature-card i { font-size: 2rem; color: var(--gold); margin-bottom: 1rem; }
-        .feature-card h4 { font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--accent-dark); }
-        .feature-card p { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
+        .feature-card i { font-size: 1.5rem; color: var(--gold); margin-bottom: 0.5rem; display: block; }
+        .feature-card h4 { font-size: 0.9rem; color: var(--accent-dark); margin-bottom: 0.25rem; }
+        .feature-card p { font-size: 0.75rem; color: var(--text-muted); margin: 0; }
 
-        .about-image-frame { border-radius: 30px; overflow: hidden; border: 1px solid rgba(255,255,255,0.6); box-shadow: 0 30px 60px rgba(62,39,35,0.15); }
-        .about-image-frame img { width: 100%; height: auto; display: block; transition: transform 0.8s; }
-        .about-image-frame:hover img { transform: scale(1.08); }
+        .about-image-frame {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.6);
+            box-shadow: 0 10px 25px rgba(62,39,35,0.1);
+        }
+
+        .about-image-frame img { width: 100%; height: auto; display: block; }
 
         .gallery { background: transparent; }
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
 
         .gallery-item {
-            position: relative; border-radius: 25px; overflow: hidden; aspect-ratio: 4/5; cursor: pointer;
-            border: 1px solid rgba(255,255,255,0.6); box-shadow: 0 15px 35px rgba(62,39,35,0.1);
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            border: 1px solid rgba(255,255,255,0.6);
+            box-shadow: 0 8px 20px rgba(62,39,35,0.08);
         }
 
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
-        .gallery-item:hover img { transform: scale(1.15); }
+        .gallery-item img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
 
         .gallery-overlay {
-            position: absolute; bottom: 0; left: 0; right: 0; padding: 3rem 2rem 2rem;
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            padding: 1.5rem 1.25rem 1.25rem;
             background: linear-gradient(to top, rgba(62,39,35,0.95), transparent);
-            transform: translateY(30px); opacity: 0; transition: all 0.5s ease;
         }
 
-        .gallery-item:hover .gallery-overlay { transform: translateY(0); opacity: 1; }
-        .gallery-overlay h3 { font-size: 1.8rem; color: #fff; margin-bottom: 0.5rem; }
-        .gallery-overlay p { color: var(--gold-light); font-size: 1rem; }
+        .gallery-overlay h3 { font-size: 1.1rem; color: #fff; margin-bottom: 0.25rem; }
+        .gallery-overlay p { color: var(--gold-light); font-size: 0.8rem; }
 
         .contact { background: rgba(255,255,255,0.3); text-align: center; }
-        .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; max-width: 1100px; margin: 0 auto; }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
 
         .contact-card {
-            padding: 4rem 2rem; border-radius: 25px; background: rgba(255,255,255,0.5);
-            border: 1px solid rgba(255,255,255,0.7); transition: all 0.4s;
+            padding: 1.5rem 1.25rem;
+            border-radius: 16px;
+            background: rgba(255,255,255,0.6);
+            border: 1px solid rgba(255,255,255,0.7);
         }
-
-        .contact-card:hover { transform: translateY(-15px); border-color: var(--gold); box-shadow: 0 20px 50px rgba(62,39,35,0.15); background: rgba(255,255,255,0.7); }
 
         .contact-icon {
-            width: 80px; height: 80px; background: rgba(156,102,68,0.1); border-radius: 50%;
-            display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;
-            color: var(--gold); font-size: 2rem; border: 1px solid rgba(156,102,68,0.2);
+            width: 50px; height: 50px;
+            background: rgba(156,102,68,0.1);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 0.75rem;
+            color: var(--gold);
+            font-size: 1.25rem;
         }
 
-        .contact-card h3 { font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--accent-dark); }
-        .contact-card p { color: var(--text-muted); font-size: 1rem; }
-        .contact-card a { color: var(--gold); text-decoration: none; font-weight: 600; font-size: 1.2rem; }
+        .contact-card h3 { font-size: 1.1rem; color: var(--accent-dark); margin-bottom: 0.25rem; }
+        .contact-card p { color: var(--text-muted); font-size: 0.85rem; }
+        .contact-card a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
 
-        footer { background: var(--accent-dark); padding: 4rem 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #25D366;
+            color: white !important;
+            padding: 0.7rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+        }
 
-        .social-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; }
+        footer {
+            background: var(--accent-dark);
+            padding: 2.5rem 1.5rem 1.5rem;
+            text-align: center;
+        }
+
+        .social-links { display: flex; justify-content: center; gap: 1.25rem; margin-bottom: 1.25rem; }
 
         .social-links a {
-            width: 60px; height: 60px; border-radius: 50%; background: rgba(255,255,255,0.1);
-            display: flex; align-items: center; justify-content: center; color: var(--gold-light);
-            font-size: 1.5rem; transition: all 0.3s; border: 1px solid rgba(255,255,255,0.2);
+            width: 45px; height: 45px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--gold-light);
+            font-size: 1.2rem;
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
-        .social-links a:hover { background: var(--gold); color: #fff; transform: translateY(-5px) rotate(10deg); }
+        footer p { color: rgba(255,255,255,0.7); font-size: 0.8rem; }
 
-        footer p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
-
-        .reveal { opacity: 0; transform: translateY(50px); transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        /* ===== ANIMAÇÕES ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: all 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
         .reveal.active { opacity: 1; transform: translateY(0); }
         
         .text-reveal { overflow: hidden; display: inline-block; }
-        .text-reveal span { display: inline-block; transform: translateY(100%); transition: transform 1s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .text-reveal span {
+            display: inline-block;
+            transform: translateY(100%);
+            transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
         .active .text-reveal span { transform: translateY(0); }
 
         .delay-1 { transition-delay: 0.1s; }
         .delay-2 { transition-delay: 0.2s; }
         .delay-3 { transition-delay: 0.3s; }
 
-        @media (max-width: 1024px) {
-            .hero-container { gap: 3rem; }
-            .hero-title { font-size: 3.5rem; }
-            .video-wrapper { transform: none; }
-            .hero-logo img { max-height: 140px; }
-            .intro-video-container { width: 400px; }
+        /* ===== TABLET ===== */
+        @media (min-width: 600px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
-        @media (max-width: 768px) {
-            header { padding: 0.8rem 1rem; }
-            .logo img { height: 60px; }
-            .hero { padding-top: 100px; }
-            .hero-container { grid-template-columns: 1fr; text-align: center; }
-            .hero-content { padding: 0; }
-            .hero-buttons { justify-content: center; flex-direction: column; }
-            .hero-logo img { max-height: 120px; }
-            .about-content { grid-template-columns: 1fr; }
-            .contact-grid { grid-template-columns: 1fr; }
-            .nav-links { display: none; position: absolute; top: 80px; left: 5%; width: 90%; background: rgba(255,255,255,0.9); flex-direction: column; padding: 2rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.5); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-            .nav-links.active { display: flex; }
-            .nav-links a { color: var(--text-main); }
-            .mobile-menu { display: block; }
-            .intro-video-container { width: 300px; }
-            .intro-skip { bottom: 20px; right: 20px; padding: 0.6rem 1.5rem; font-size: 0.8rem; }
-            .intro-progress-bar { width: 200px; }
+        @media (min-width: 768px) {
+            html { font-size: 17px; }
+            header { padding: 0.75rem 2rem; }
+            .logo img { height: 55px; }
+            
+            .hero { padding: 100px 2rem 2rem; }
+            .hero-container {
+                flex-direction: row;
+                gap: 3rem;
+                justify-content: center;
+            }
+            .hero-content {
+                text-align: left;
+                align-items: flex-start;
+            }
+            .hero-logo { justify-content: flex-start; }
+            .hero-logo img { max-height: 130px; }
+            .hero-title { font-size: 2.75rem; }
+            .hero-desc { font-size: 1rem; }
+            .hero-buttons {
+                flex-direction: row;
+                max-width: none;
+                justify-content: flex-start;
+            }
+            .btn { width: auto; }
+            .video-wrapper { max-width: 380px; margin-top: 0; }
+            
+            .about-content { flex-direction: row; text-align: left; }
+            .about-text { text-align: left; }
+            .about-image-frame { max-width: 380px; }
+            
+            .contact-grid { grid-template-columns: repeat(3, 1fr); max-width: 800px; }
+            .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+            
+            h2 { font-size: 2.5rem; }
+            section { padding: 5rem 2rem; }
+            
+            .nav-links {
+                display: flex;
+                position: static;
+                flex-direction: row;
+                background: transparent;
+                box-shadow: none;
+                border-radius: 0;
+                padding: 0;
+                gap: 1.5rem;
+            }
+            .nav-links a { padding: 0.5rem; min-height: auto; }
+            .mobile-menu { display: none; }
+        }
+
+        @media (min-width: 1024px) {
+            html { font-size: 18px; }
+            .hero-title { font-size: 3.25rem; }
+            .hero-logo img { max-height: 150px; }
+            .video-wrapper { max-width: 420px; }
+            h2 { font-size: 3rem; }
+            section { padding: 6rem 2rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== TELA DE INTRO ===== -->
+    <!-- INTRO -->
     <div class="intro-overlay" id="introOverlay">
-        <div class="intro-decorations">
-            <span class="intro-float">🍩</span>
-            <span class="intro-float">🍰</span>
-            <span class="intro-float">🍫</span>
-            <span class="intro-float">🧁</span>
-            <span class="intro-float">🍪</span>
-        </div>
-        
         <div class="intro-video-container">
             <video id="introVideo" autoplay muted playsinline>
                 <source src="intro-trem-bao.mp4" type="video/mp4">
             </video>
         </div>
-        
-        <div class="intro-progress-bar">
-            <div class="intro-progress-fill"></div>
-        </div>
-        
+        <div class="intro-progress-bar"><div class="intro-progress-fill"></div></div>
         <p class="intro-text">Bem-vindo à Doceria Trem Bão</p>
-        
-        <button class="intro-skip" id="skipBtn">
-            Pular Intro <i class="fas fa-forward" style="margin-left: 5px;"></i>
-        </button>
+        <button class="intro-skip" id="skipBtn"><i class="fas fa-forward"></i> Pular</button>
     </div>
 
-    <!-- ===== SITE PRINCIPAL ===== -->
+    <!-- HEADER -->
     <header class="glass" id="mainHeader">
         <nav>
             <a href="#" class="logo">
-                <img src="logo-trem-bao-trem.png" alt="Trem Bão - Doceria & Delícias" id="main-logo">
+                <img src="logo-trem-bao-trem.png" alt="Trem Bão">
             </a>
-            <div class="mobile-menu"><i class="fas fa-bars"></i></div>
-            <ul class="nav-links">
+            <div class="mobile-menu" id="mobileMenu"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Início</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#galeria">Menu</a></li>
@@ -515,13 +587,13 @@
         </nav>
     </header>
 
+    <!-- HERO -->
     <section class="hero" id="home">
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-logo reveal">
-                    <img src="logo-trem-bao-texto.png" alt="Trem Bão - Doceria & Delícias">
+                    <img src="logo-trem-bao-texto.png" alt="Trem Bão">
                 </div>
-                
                 <h1 class="hero-title">
                     <div class="text-reveal"><span style="transition-delay:0.1s">Delícias que</span></div><br>
                     <div class="text-reveal"><span style="transition-delay:0.2s">encantam a <span style="color:var(--gold)">alma</span></span></div>
@@ -529,14 +601,13 @@
                 <p class="hero-desc reveal delay-2">Doceria artesanal premium em Corumbá-MS. Bolos personalizados e doces finos para momentos inesquecíveis.</p>
                 <div class="hero-buttons reveal delay-3">
                     <a href="https://wa.me/5567984060550" class="btn btn-primary">
-                        <i class="fab fa-whatsapp"></i> Encomendar Agora
+                        <i class="fab fa-whatsapp"></i> Encomendar
                     </a>
                     <a href="https://instagram.com/trembao" class="btn btn-secondary">
                         <i class="fab fa-instagram"></i> Instagram
                     </a>
                 </div>
             </div>
-            
             <div class="video-wrapper reveal delay-2">
                 <video class="brigadeiro-video" autoplay loop muted playsinline>
                     <source src="brigadeiro-girando.mp4" type="video/mp4">
@@ -545,6 +616,7 @@
         </div>
     </section>
 
+    <!-- SOBRE -->
     <section class="about" id="sobre">
         <div class="container">
             <div class="section-header reveal">
@@ -553,38 +625,30 @@
             </div>
             <div class="about-content">
                 <div class="about-text reveal delay-1">
-                    <p>Nascida na Rua Cáceres 946, a <strong style="color:var(--gold)">Doceria Trem Bão</strong> é o resultado da paixão por transformar ingredientes selecionados em memórias doces. Cada receita é um equilíbrio perfeito entre tradição e inovação.</p>
-                    <p>Não vendemos apenas doces; entregamos a felicidade de compartilhar momentos especiais com quem amamos.</p>
+                    <p>Nascida na Rua Cáceres 946, a <strong style="color:var(--gold)">Doceria Trem Bão</strong> é o resultado da paixão por transformar ingredientes selecionados em memórias doces.</p>
                     <div class="feature-grid">
                         <div class="feature-card">
-                            <i class="fas fa-gem"></i>
-                            <h4>Premium</h4>
-                            <p>Ingredientes de alta qualidade.</p>
+                            <i class="fas fa-gem"></i><h4>Premium</h4><p>Alta qualidade</p>
                         </div>
                         <div class="feature-card">
-                            <i class="fas fa-hand-holding-heart"></i>
-                            <h4>Artesanal</h4>
-                            <p>Feito à mão com carinho.</p>
+                            <i class="fas fa-hand-holding-heart"></i><h4>Artesanal</h4><p>Feito com carinho</p>
                         </div>
                         <div class="feature-card">
-                            <i class="fas fa-paint-brush"></i>
-                            <h4>Personalizado</h4>
-                            <p>Do seu jeitinho.</p>
+                            <i class="fas fa-paint-brush"></i><h4>Personalizado</h4><p>Do seu jeitinho</p>
                         </div>
                         <div class="feature-card">
-                            <i class="fas fa-truck-fast"></i>
-                            <h4>Entrega</h4>
-                            <p>Em Corumbá e região.</p>
+                            <i class="fas fa-truck-fast"></i><h4>Entrega</h4><p>Corumbá e região</p>
                         </div>
                     </div>
                 </div>
                 <div class="about-image-frame glass reveal delay-2">
-                    <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476d?w=800&q=80" alt="Preparando doces premium">
+                    <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476d?w=800&q=80" alt="Doces" loading="lazy">
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- GALERIA -->
     <section class="gallery" id="galeria">
         <div class="container">
             <div class="section-header reveal">
@@ -593,30 +657,22 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item reveal delay-1">
-                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80" alt="Bolo de Chocolate">
-                    <div class="gallery-overlay">
-                        <h3>Chocolate Noir</h3>
-                        <p>Camadas de ganache belga</p>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80" alt="Chocolate" loading="lazy">
+                    <div class="gallery-overlay"><h3>Chocolate Noir</h3><p>Ganache belga</p></div>
                 </div>
                 <div class="gallery-item reveal delay-2">
-                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80" alt="Bolo de Morango">
-                    <div class="gallery-overlay">
-                        <h3>Red Velvet</h3>
-                        <p>Clássico com toque de avelã</p>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80" alt="Morango" loading="lazy">
+                    <div class="gallery-overlay"><h3>Red Velvet</h3><p>Toque de avelã</p></div>
                 </div>
                 <div class="gallery-item reveal delay-3">
-                    <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=80" alt="Brigadeiros">
-                    <div class="gallery-overlay">
-                        <h3>Brigadeiros Gold</h3>
-                        <p>Edição limitada</p>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=80" alt="Brigadeiros" loading="lazy">
+                    <div class="gallery-overlay"><h3>Brigadeiros Gold</h3><p>Edição limitada</p></div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- CONTATO -->
     <section class="contact" id="contato">
         <div class="container">
             <div class="section-header reveal">
@@ -627,12 +683,12 @@
                 <div class="contact-card reveal delay-1">
                     <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
                     <h3>WhatsApp</h3>
-                    <p><a href="https://wa.me/5567984060550">(67) 98406-0550</a></p>
+                    <a href="https://wa.me/5567984060550" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> (67) 98406-0550</a>
                 </div>
                 <div class="contact-card reveal delay-2">
                     <div class="contact-icon"><i class="fab fa-instagram"></i></div>
                     <h3>Instagram</h3>
-                    <p><a href="https://instagram.com/trembao">@trembao</a></p>
+                    <a href="https://instagram.com/trembao">@trembao</a>
                 </div>
                 <div class="contact-card reveal delay-3">
                     <div class="contact-icon"><i class="fas fa-map-pin"></i></div>
@@ -652,64 +708,50 @@
     </footer>
 
     <script>
-        // ===== CONTROLE DA INTRO =====
         const introOverlay = document.getElementById('introOverlay');
         const introVideo = document.getElementById('introVideo');
         const skipBtn = document.getElementById('skipBtn');
         const mainHeader = document.getElementById('mainHeader');
         
-        // Duração da intro (5 segundos)
-        const introDuration = 5000;
-        
-        // Função para fechar a intro
         function closeIntro() {
             introOverlay.classList.add('fade-out');
             mainHeader.classList.add('visible');
-            
-            // Remove o overlay após a transição
             setTimeout(() => {
                 introOverlay.style.display = 'none';
-                // Ativa as animações do scroll
                 initScrollAnimations();
-            }, 800);
+            }, 600);
         }
         
-        // Fechar intro quando o vídeo terminar
         introVideo.addEventListener('ended', closeIntro);
-        
-        // Fechar intro após o tempo máximo (caso o vídeo não termine)
-        setTimeout(closeIntro, introDuration);
-        
-        // Botão de pular
+        setTimeout(closeIntro, 5000);
         skipBtn.addEventListener('click', closeIntro);
         
-        // ===== SCROLL ANIMATIONS =====
         function initScrollAnimations() {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
+                    if (entry.isIntersecting) entry.target.classList.add('active');
                 });
-            }, { threshold: 0.1 });
-
+            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         }
 
-        // ===== MOBILE MENU =====
-        const menuBtn = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+        mobileMenu.addEventListener('click', () => navLinks.classList.toggle('active'));
+        
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => navLinks.classList.remove('active'));
         });
 
-        // ===== SMOOTH SCROLL =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                navLinks.classList.remove('active');
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) target.scrollIntoView({ behavior: 'smooth' });
+                if (target) {
+                    const offset = 70;
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
             });
         });
     </script>
